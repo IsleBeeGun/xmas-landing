@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Новогодняя акция ЕВРОИНС</title>
+  <meta name="description"
+    content="ЕВРОИНС дарит подарки к Новому Году! Страхование с выгодой до 50%. Акция действует до 10.01.2021" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="theme-color" content="#35347e" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#009ec1" />
+  <meta name="msapplication-TileColor" content="#009ec1" />
+  <meta name="theme-color" content="#009ec1" />
+  <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof window.ShadowRoot !== 'function') {
+        var notifiers = document.querySelectorAll('popup-notify');
+        var nIndex = 0, nLength = notifiers.length;
+        for (; nIndex < nLength; nIndex++) {
+          notifiers[nIndex].style.display = "none";
+        }
+      }
+    })
+  </script>
+</head>
+
+
+<body style="overflow-x: hidden;">
+
+
+  <!-- Modal -->
+  <div class="modal-backdrop"></div>
+  <div class="modal-window">
+    <span class="modal-exit">&times;</span>
+    <div class="modal-message content"></div>
+  </div>
+
+  <!-- Top -->
+  <section class="section p-0 top">
+    <div class="container"></div>
+  </section>
+
+  <!-- New Hero -->
+  <header class="hero hero-bg-desktop p-0">
+    <div class="hero-body p-0" style="position: relative">
+      <canvas id="snowfall"></canvas>
+      <div class="container" style="overflow: hidden;">
+        <div class="columns has-text-centered">
+          <div class="column">
+            <h1 class="hero-title">
+              ЕВРОИНС дарит подарки к Новому Году!
+              <br />
+              <span class="has-text-danger">Страхование с выгодой до 50%</span>
+            </h1>
+            <p class="is-hidden-touch"
+              style="font-size: 25px; padding-top: 1.1875rem; letter-spacing: 0rem; color: white">
+              Акция действует до 10.01.2021
+            </p>
+            <a href="#cards" class="hero-button">
+              Выбрать полис
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero is-primary hero-bg-desktop pt-4" id="form-desktop-top" style="display: none">
+    <div class="hero-body">
+      <div class="container">
+        <nav class="level pb-4 is-hidden-touch">
+          <!-- Left side -->
+          <div class="level-left">
+            <img class="logo-icon-lg" src="./images/logo_white.svg" alt="Логотип ЕВРОИНС" />
+          </div>
+
+          <!-- Right side -->
+          <div class="level-right">
+            <a href="#benefits" class="level-item has-text-white desktop-menu-fix">Преимущества</a>
+            <a href="#start" class="level-item has-text-white desktop-menu-fix">Начало работы</a>
+            <a href="#faq" class="level-item has-text-white desktop-menu-fix">Вопросы и ответы</a>
+            <a href="" class="level-item has-text-white desktop-menu-fix-last">Вход</a>
+          </div>
+        </nav>
+
+        <div class="columns">
+          <!-- Left side -->
+          <div class="column is-one-third-desktop pr-0">
+            <div class="block content">
+              <h1 class="title is-size-1-widescreen is-size-3-desktop is-size-4" style="margin-bottom: 2rem">
+                Зарабатывай <br />
+                на страховании!
+              </h1>
+              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
+                быстрое КВ с высоким процентом
+              </p>
+              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
+                оперативный андеррайтинг
+              </p>
+              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
+                процессы автоматизированы
+              </p>
+              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
+                европейский сервис
+              </p>
+            </div>
+          </div>
+
+          <!-- Middle -->
+
+          <div class="column is-one-third-desktop"></div>
+
+          <!-- Right side -->
+
+          <div class="column is-one-third-desktop px-0 is-hidden-touch">
+            <form id="form-desktop" class="tile is-ancestor is-vertical desktop-form">
+              <div class="tile is-parent pb-2">
+                <div class="tile is-child field">
+                  <label class="label pl-2 has-text-weight-normal is-size-7">Ф.И.О. полностью</label>
+                  <div class="control has-icons-right">
+                    <input class="input field-fix" type="text" name="name" placeholder="Фамилия Имя Отчество"
+                      autocomplete="off" title="Фамилия Имя Отчество" required />
+                    <span class="icon is-small is-right is-invisible">
+                      <i class="fas fa-check has-text-success"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tile is-parent pt-0 pb-2">
+                <div class="tile is-child field">
+                  <label class="label pl-2 has-text-weight-normal is-size-7">Номер телефона</label>
+                  <div class="control has-icons-right">
+                    <input class="input" type="tel" name="phone" placeholder="+7 (495) 999-99-99" autocomplete="off"
+                      title="Ваш номер телефона" required />
+                    <span class="icon is-small is-right is-invisible">
+                      <i class="fas fa-check has-text-success"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tile is-vertical field">
+                <div class="tile is-parent field-label mr-0 pt-0 pb-0">
+                  <label class="tile is-child label has-text-left pb-2 pl-2 has-text-weight-normal is-size-7">Дата
+                    рождения</label>
+                </div>
+                <div class="tile is-parent field-body pt-0 pb-0">
+                  <div class="tile is-child field">
+                    <div class="control pr-2">
+                      <input class="input" type="text" name="day" placeholder="31" autocomplete="off"
+                        title="Укажите день" required />
+                    </div>
+                  </div>
+
+                  <div class="tile is-child field">
+                    <div class="control pr-2">
+                      <input class="input" type="text" name="month" placeholder="12" autocomplete="off"
+                        title="Укажите месяц" required />
+                    </div>
+                  </div>
+
+                  <div class="tile is-child is-3 field">
+                    <div class="control has-icons-right">
+                      <input class="input" type="text" name="year" placeholder="1999" autocomplete="off"
+                        title="Укажите год" required />
+                      <span class="icon is-small is-right is-invisible">
+                        <i class="fas fa-check has-text-success"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tile is-parent">
+                <div class="tile is-child control">
+                  <button
+                    class="button is-warning py-5 is-size-6-desktop is-size-5-fullhd is-fullwidth has-text-weight-bold"
+                    type="submit">
+                    Стать агентом ЕВРОИНС
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile form -->
+  <div class="section is-hidden-desktop" id="form-mobile-top" style="display: none">
+    <div class="container">
+      <form class="colums" id="form-mobile">
+        <div class="field">
+          <label class="label pb-2 pl-2 has-text-weight-normal is-size-7">Ф.И.О. полностью</label>
+          <div class="control has-icons-right">
+            <input class="input mobile-input field-fix" type="text" name="name" placeholder="Фамилия Имя Отчество"
+              autocomplete="off" title="Фамилия Имя Отчество" required />
+            <span class="icon is-small is-right is-invisible">
+              <i class="fas fa-check has-text-success"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label pb-2 pl-2 has-text-weight-normal is-size-7">Номер телефона</label>
+          <div class="control has-icons-right">
+            <input class="input mobile-input" type="tel" name="phone" placeholder="+7 (495) 999-99-99"
+              autocomplete="off" title="Ваш номер телефона" required />
+            <span class="icon is-small is-right is-invisible">
+              <i class="fas fa-check has-text-success"></i>
+            </span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label has-text-left pb-2 pl-2 has-text-weight-normal is-size-7">Дата рождения</label>
+
+          <div class="columns is-mobile is-gapless field-body pt-0 pb-0">
+            <div class="column field">
+              <div class="control pr-2">
+                <input class="input mobile-input" type="tel" name="day" placeholder="31" autocomplete="off"
+                  title="Укажите день" required />
+              </div>
+            </div>
+
+            <div class="column field">
+              <div class="control pr-2">
+                <input class="input mobile-input" type="tel" name="month" placeholder="12" autocomplete="off"
+                  title="Укажите месяц" required />
+              </div>
+            </div>
+
+            <div class="column is-6 field">
+              <div class="control has-icons-right">
+                <input class="input mobile-input" type="tel" name="year" placeholder="1999" autocomplete="off"
+                  title="Укажите год" required />
+                <span class="icon is-small is-right is-invisible">
+                  <i class="fas fa-check has-text-success"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="control block has-text-centered">
+          <button class="button mt-4 is-warning has-text-weight-bold" type="submit">
+            Стать агентом ЕВРОИНС
+          </button>
+        </div>
+
+        <div class="columns is-mobile is-centered">
+          <div class="column is-one-third mobile-form-spacer"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <section class="section cards-bg-desktop">
+    <div class="container cards-container" id="cards">
+      <div class="columns is-multiline" style="position: relative;">
+        <div class="column is-half card-container">
+          <!-- ДМС стоматология -->
+          <div class="card card_left bg-santa">
+            <div class="card__head">
+              <img class="card__logo" src="./images/health.svg" alt="Страхование Здоровья">
+              <h2 class="card__title">ДМС стоматология </h2>
+              <p class="card__subtitle">С выгодой до 50%</p>
+              <p class="card__info">Получайте стоматологическую помощь <br> качественно и быстро</p>
+            </div>
+            <div class="card__body">
+              <p class="card__text">
+                <span class="card__bold">Риски:</span><br>
+                - стоматологический рентген<br>
+                - анестезия<br>
+                - чистка эмали<br>
+                - установка пломб
+              </p>
+              <p class="card__text card__text_at-bottom">
+                <span class="card__bold">Макс. возмещение:</span> 120 000 руб.
+                <popup-notify tip_background="white" tip_color="#2A3985" tip_position="top">
+                  <span slot="message">
+                    Компенсация определяется по соглашению сторон на основании договора страхования. Приведенная сумма
+                    является примером расчета.
+                  </span>
+                </popup-notify>
+              </p>
+            </div>
+            <div class="card__footer">
+              <p class="card__text">
+                <span class="card__bold">Стоимость:</span><span class="card__crossed card__crossed_50">от 12 000
+                  руб.</span>
+              </p>
+              <p class="card__price">от <span class="card__bold">6000</span> руб.</p>
+              <a href="#" class="button is-warning card__button">
+                Получить расчет
+              </a>
+              <p class="card__xs">
+                Цена полиса зависит от: оказываемых, согласно договору, медицинских услуг; возраста застрахованного;
+                выбора медицинского учреждения;
+                иных условий, указанные в договоре страхования. <br>
+                Условия акции действуют в соответсвии с правилами страхования по каждому виду.
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half card-container">
+          <!-- Страховка от несчастного случая -->
+          <div class="card card_right bg-cane-1">
+            <div class="card__head">
+              <img class="card__logo" src="./images/ns.svg" alt="Страховка от несчастного случая">
+              <h2 class="card__title card__title_smaller">Страховка от несчастного случая</h2>
+              <p class="card__subtitle">С выгодой до 40%</p>
+              <p class="card__info">Зимние развлечения могут быть <br> травмоопасными, защититесь от травм</p>
+            </div>
+            <div class="card__body">
+              <p class="card__text">
+                <span class="card__bold">Риски:</span><br>
+                - травма из-за несчастного случая<br>
+                - ивалидность из-за несчастного случая<br>
+                - смерть из-за несчастного случая
+              </p>
+              <p class="card__text card__text_at-bottom">
+                <span class="card__bold">Макс. возмещение:</span> 300 000 руб.
+                <popup-notify tip_background="white" tip_color="#2A3985" tip_position="top">
+                  <span slot="message">
+                    Компенсация определяется по соглашению сторон на основании договора страхования. Приведенная сумма
+                    является примером расчета.
+                  </span>
+                </popup-notify>
+              </p>
+            </div>
+            <div class="card__footer">
+              <p class="card__text">
+                <span class="card__bold">Стоимость:</span><span class="card__crossed card__crossed_40">от 2400
+                  руб.</span>
+              </p>
+              <p class="card__price">от <span class="card__bold">1440</span> руб.</p>
+              <a href="#" class="button is-warning card__button">
+                Получить расчет
+              </a>
+              <p class="card__xs">
+                Цена полиса зависит от: возраста физического лица; иных условий, указанные в договоре страхования. <br>
+                Условия акции действуют в соответсвии с правилами страхования по каждому виду.
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half card-container">
+          <!-- Cтрахование Имущества -->
+          <div class="card card_left bg-cane-2">
+            <div class="card__head">
+              <img class="card__logo" src="./images/home.svg" alt="Страхование Имущества">
+              <h2 class="card__title">Страхование Имущества</h2>
+              <p class="card__subtitle">С выгодой до 30%</p>
+              <p class="card__info">В полис входит страхование движимого <br> имущества и отделки помещения</p>
+            </div>
+            <div class="card__body">
+              <p class="card__text">
+                <span class="card__bold">Риски:</span><br>
+                - кража<br>
+                - пожар<br>
+                - стихийное бедствие<br>
+                - ущерб от воздействия воды
+              </p>
+              <p class="card__text card__text_at-bottom">
+                <span class="card__bold">Макс. возмещение:</span> 500 000 руб.
+              </p>
+            </div>
+            <div class="card__footer">
+              <p class="card__text">
+                <span class="card__bold">Стоимость:</span><span class="card__crossed card__crossed_30">от 4900
+                  руб.</span>
+              </p>
+              <p class="card__price">от <span class="card__bold">3430</span> руб.</p>
+              <a href="#" class="button is-warning card__button">
+                Получить расчет
+              </a>
+              <p class="card__xs">
+                Цена полиса зависит от: стоимости страхуемого имущества; <br>
+                набора рисков; страхуется ли отделка, движимое домашнее имущество и гражданская ответственность. <br>
+                Условия акции действуют в соответсвии с правилами страхования по <br> каждому виду.
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half card-container">
+          <!-- КАСКО -->
+          <div class="card card_right bg-reindeer">
+            <div class="card__head">
+              <img class="card__logo" src="./images/kasko.svg" alt="КАСКО">
+              <h2 class="card__title">КАСКО</h2>
+              <p class="card__subtitle">С выгодой до 50%</p>
+              <p class="card__info">Если страховое событие произошло по <br> Вашей вине - ущерб может быть возмещен </p>
+            </div>
+            <div class="card__body">
+              <p class="card__text">
+                <span class="card__bold">Риски:</span><br>
+                - ущерб при ДТП<br>
+                - воздействие природных явлений<br>
+                - хищение<br>
+                - другие страховые события
+              </p>
+              <p class="card__text card__text_at-bottom">
+                <span class="card__bold">Макс. возмещение:</span> стоимость авто
+              </p>
+            </div>
+            <div class="card__footer">
+              <p class="card__text">
+                <span class="card__bold">Стоимость:</span><span class="card__crossed card__crossed_50">от 34 000
+                  руб.</span>
+              </p>
+              <p class="card__price">от <span class="card__bold">17 000</span> руб.</p>
+              <a href="#" class="button is-warning card__button">
+                Получить расчет
+              </a>
+              <p class="card__xs card__xs_smaller">
+                Цена полиса зависит от: статистики угонов определенной марки и модели транспортного средства; от
+                стоимости запчастей и обслуживания на станциях технического обслуживания; от возраста транспортного
+                средства; от мощности двигателя;
+                от возраста и стажа вождения всех водителей;
+                от страховой истории; от места хранения и тд. <br>
+                Условия акции действуют в соответсвии с правилами страхования по каждому виду.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callback -->
+  <section class="section callback-bg-desktop">
+    <div class="container">
+      <form class="columns is-multiline callback">
+        <div class="column is-full">
+          <h2 class="callback__title">Остались вопросы? <br>
+            Оставьте заявку, и мы Вам перезвоним!</h2>
+        </div>
+        <div class="column is-half">
+          <div class="callback__field">
+            <label for="callbackName">Ваше имя<span class="has-text-danger">*</span>:</label>
+            <div>
+              <input type="text" id="callbackName" name="name" placeholder="Иван" autocomplete="on"
+                title="Как к Вам следует обращаться?" required />
+              <span>
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="callback__field">
+            <label for="callbackPhone">Телефон<span class="has-text-danger">*</span>:</label>
+            <div>
+              <input type="tel" id="callbackPhone" name="phone" placeholder="+7(___) ___-__-__" autocomplete="on"
+                title="Номер телефона, по которому мы Вам перезвоним" required />
+              <span>
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="callback__field_double">
+            <label for="callbackFrom">Время звонка<span class="has-text-danger">*</span>:</label>
+            <div>
+              <input type="text" id="callbackFrom" name="from" placeholder="С" autocomplete="on"
+                title="Со скольких мы можем Вам позвонить?" required />
+              <span>
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+            <div>
+              <input type="text" id="callbackTill" name="till" placeholder="По" autocomplete="on"
+                title="До скольких мы можем Вам позвонить?" required />
+              <span>
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="callback__field">
+            <label for="callbackRegion">Регион<span class="has-text-danger">*</span>:</label>
+            <div>
+              <input type="text" id="callbackRegion" name="city" placeholder="Москва" autocomplete="on"
+                title="Укажите Ваше месторасположение" required />
+              <span>
+                <i class="fas fa-check"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="column is-full">
+          <label class="callback__check">
+            <input type="checkbox" readonly>
+            <span>Я согласен на обработку Персональных данных (ПД) и ознакомился с Политикой защиты и обработки
+              ПД.</span>
+          </label>
+        </div>
+        <div class="column is-full">
+          <button class="callback__submit">
+            Отправить
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <img class="logo-icon" src="./images/logo_white.svg" alt="Логотип ЕВРОИНС" />
+      <p class="mt-4">
+        © 2009-2020, ООО РСО «ЕВРОИНС». <br />
+        Все материалы, размещенные на данном сайте, защищены законом об
+        авторских правах и являются <br />
+        собственностью страховой компании. Лицензии на страхование ЦБ РФ СЛ №
+        3954, СИ № 3954, ОС № 3954-03
+      </p>
+    </div>
+  </footer>
+
+  <script src="./js/xmas-main.js"></script>
+</body>
+
+</html>
