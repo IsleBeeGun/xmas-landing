@@ -8,7 +8,7 @@
     content="ЕВРОИНС дарит подарки к Новому Году! Страхование с выгодой до 50%. Акция действует до 10.01.2021" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="theme-color" content="#35347e" />
+  <meta name="theme-color" content="#FFFFFF" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -445,75 +445,83 @@
   <!-- Callback -->
   <section class="section callback-bg-desktop">
     <div class="container">
-      <form class="columns is-multiline callback">
+      <form class="columns is-multiline callback" id="callback-form">
         <div class="column is-full">
           <h2 class="callback__title">Остались вопросы? <br>
             Оставьте заявку, и мы Вам перезвоним!</h2>
         </div>
         <div class="column is-half">
-          <div class="callback__field">
-            <label for="callbackName">Ваше имя<span class="has-text-danger">*</span>:</label>
-            <div>
-              <input type="text" id="callbackName" name="name" placeholder="Иван" autocomplete="on"
+          <div class="field callback__field">
+            <label class="label" for="callbackName">Ваше имя<span class="has-text-danger">*</span>:</label>
+            <div class="control has-icons-right">
+              <input class="input" type="text" id="callbackName" name="name" placeholder="Иван" autocomplete="on"
                 title="Как к Вам следует обращаться?" required />
-              <span>
-                <i class="fas fa-check"></i>
+              <span class="icon is-right is-invisible">
+                <i class="fas fa-check has-text-success"></i>
               </span>
             </div>
           </div>
         </div>
         <div class="column is-half">
-          <div class="callback__field">
-            <label for="callbackPhone">Телефон<span class="has-text-danger">*</span>:</label>
-            <div>
-              <input type="tel" id="callbackPhone" name="phone" placeholder="+7(___) ___-__-__" autocomplete="on"
-                title="Номер телефона, по которому мы Вам перезвоним" required />
-              <span>
-                <i class="fas fa-check"></i>
+          <div class="field callback__field">
+            <label class="label" for="callbackPhone">Телефон<span class="has-text-danger">*</span>:</label>
+            <div class="control has-icons-right">
+              <input class="input" type="tel" id="callbackPhone" name="phone" placeholder="+7(___) ___-__-__"
+                autocomplete="on" title="Номер телефона, по которому мы Вам перезвоним" required />
+              <span class="icon is-right is-invisible">
+                <i class="fas fa-check has-text-success"></i>
               </span>
             </div>
           </div>
         </div>
         <div class="column is-half">
-          <div class="callback__field_double">
-            <label for="callbackFrom">Время звонка<span class="has-text-danger">*</span>:</label>
-            <div>
-              <input type="text" id="callbackFrom" name="from" placeholder="С" autocomplete="on"
+          <div class="field callback__field_double">
+            <label class="label" for="callbackFrom">Время звонка<span class="has-text-danger">*</span>:</label>
+            <div class="control has-icons-right">
+              <input class="input" type="tel" id="callbackFrom" name="from" placeholder="С" autocomplete="on"
                 title="Со скольких мы можем Вам позвонить?" required />
-              <span>
-                <i class="fas fa-check"></i>
+              <span class="icon is-right is-invisible">
+                <i class="fas fa-check has-text-success"></i>
               </span>
             </div>
-            <div>
-              <input type="text" id="callbackTill" name="till" placeholder="По" autocomplete="on"
+            <div class="control has-icons-right">
+              <input class="input" type="tel" id="callbackTill" name="till" placeholder="По" autocomplete="on"
                 title="До скольких мы можем Вам позвонить?" required />
-              <span>
-                <i class="fas fa-check"></i>
+              <span class="icon is-right is-invisible">
+                <i class="fas fa-check has-text-success"></i>
               </span>
             </div>
           </div>
         </div>
         <div class="column is-half">
-          <div class="callback__field">
-            <label for="callbackRegion">Регион<span class="has-text-danger">*</span>:</label>
+          <div class="field callback__field">
+            <label class="label" for="callbackRegion">Регион<span class="has-text-danger">*</span>:</label>
             <div>
-              <input type="text" id="callbackRegion" name="city" placeholder="Москва" autocomplete="on"
-                title="Укажите Ваше месторасположение" required />
-              <span>
-                <i class="fas fa-check"></i>
-              </span>
+              <select id="callbackRegion" name="city" title="Укажите Ваше месторасположение" required></select>
             </div>
           </div>
         </div>
         <div class="column is-full">
           <label class="callback__check">
-            <input type="checkbox" readonly>
-            <span>Я согласен на обработку Персональных данных (ПД) и ознакомился с Политикой защиты и обработки
-              ПД.</span>
+            <span class="checkbox__input">
+              <input type="checkbox" name="checkbox" required>
+              <span class="checkbox__control">
+                <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden="true" focusable="false">
+                  <path fill='none' stroke='currentColor' stroke-width='5' d='M1.73 12.91l6.37 6.37L22.79 4.59' />
+                </svg>
+              </span>
+            </span>
+            <span class="checkbox__label">Я согласен на обработку <a
+                href="https://euro-ins.ru/calc/files/personal_data.pdf" target="_blank"
+                rel="noopener noreferrer">Персональных данных (ПД)</a> и ознакомился с <a
+                href="https://euro-ins.ru/calc/files/soglasie-na-obrabotku-pd.pdf" target="_blank"
+                rel="noopener noreferrer">Политикой
+                защиты и обработки
+                ПД.</a></span>
           </label>
         </div>
         <div class="column is-full">
-          <button class="callback__submit">
+          <button class="callback__submit" type="submit">
             Отправить
           </button>
         </div>

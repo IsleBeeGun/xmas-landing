@@ -1,12 +1,13 @@
 import '../styles/xmas-main.scss';
 import './modal';
-import './snowfall';
+//import './snowfall';
 import './popupNotify';
-//import { handleFormByID } from './forms-logic';
+import './dropdownSelector';
+import { handleFormByID } from './forms-logic';
 import zenScroll from 'zenscroll';
 
 // Setup forms
-//const formDesktop = handleFormByID('form-desktop');
+const callbackForm = handleFormByID('callback-form');
 //const formMobile = handleFormByID('form-mobile');
 
 // Setup scroll
