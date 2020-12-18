@@ -95,17 +95,17 @@ $text-shadow-menu: 2px 2px 6px rgba($primary, 0.7),
 
 html {
   font-size: 16px;
-  overflow-x: initial !important;
-  overflow-y: initial !important;
+  // overflow-x: initial !important;
+  // overflow-y: initial !important;
 }
 
 .modal {
   &-backdrop {
     transition: visibility $transition-quick, opacity $transition-quick;
+    display: none;
     visibility: hidden;
     opacity: 0;
     position: fixed;
-    display: block;
     top: 0;
     left: 0;
     width: 100%;
@@ -115,34 +115,69 @@ html {
   }
   &-window {
     transition: visibility $transition, opacity $transition;
+    display: none;
     visibility: hidden;
     opacity: 0;
     position: fixed;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
     padding: 2rem;
     padding-bottom: 4rem;
+    padding-top: 1.7rem;
     top: 30vh;
-    left: calc(50% - 15rem);
-    width: 30rem;
-    background: white;
+    left: calc(50% - 25.5rem);
+    width: 51rem;
+    min-height: 19.9rem;
+    background: url(../images/bg-modal.svg),
+      linear-gradient($primary, #0a1a75 40%);
+    background-repeat: no-repeat, repeat;
+    background-size: auto, cover;
+    background-position: bottom -20px left, top left;
     box-shadow: 0 0 10px darken($info, 20%);
     z-index: 100;
     border-radius: $radius;
-    @media screen and (max-width: 559px) {
-      top: 5vh;
-      left: calc(50% - 8rem);
-      width: 16rem;
+    @media screen and (max-width: 768px) {
+      background-position: bottom -25px left, top left;
+      top: 10vh;
+      left: calc(50% - 9.0625rem);
+      width: 18.125rem;
+      padding: 1.7rem 1rem;
+    }
+    @media screen and (min-width: 769px) and (max-width: 1023px) {
+      top: 10vh;
+      left: calc(50% - 24rem);
+      width: 48rem;
     }
   }
   &-exit {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    @media screen and (max-width: 768px) {
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+    }
     cursor: pointer;
-    align-self: flex-end;
     font-size: 2rem;
     line-height: 1rem;
     font-weight: bold;
     margin-bottom: 2rem;
+    color: white;
+    transition: color $transition-quick;
+    &:hover {
+      color: $warning;
+    }
+  }
+  &-message {
+    text-align: center;
+    & .success {
+      margin-top: 0.8rem;
+      font-size: 1.875rem;
+      color: white;
+    }
+    & .error {
+      font-size: 1.875rem;
+      color: $danger;
+    }
   }
 }
 
@@ -374,7 +409,7 @@ html {
   margin: 0 auto;
   margin-top: 8.4rem;
   @media screen and (max-width: 768px) {
-    margin-top: 5.7rem;
+    margin-top: 0rem; //////////////////////////
     & .column {
       padding-left: 0.65rem;
       padding-right: 0.65rem;
@@ -408,7 +443,49 @@ html {
       padding-bottom: 0.52rem;
     }
   }
+  &_req {
+    text-align: left;
+    margin-top: 0rem;
+    padding-bottom: 4.5rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
+    & .is-full:last-child {
+      padding: 0;
+      text-align: center;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      padding-bottom: 4.8rem;
+      & .column {
+        padding: 0;
+      }
+      & .column:nth-child(1) {
+        padding: 0;
+        padding-bottom: 0.8rem;
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      margin-top: 0rem; ////////////////////////
+      & .column {
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        padding-top: 0.46rem;
+        padding-bottom: 0rem;
+      }
+      & .column:nth-child(1) {
+        padding-right: 0;
+        padding-left: 0;
+        padding-top: 0.7rem;
+        padding-bottom: 0.65rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+      }
+      // & .column:nth-child(4) {
+      //   background-color: $danger;
 
+      // }
+    }
+  }
   &__title {
     font-size: $size-1;
     line-height: 2.625rem;
@@ -419,12 +496,20 @@ html {
       font-size: $size-2;
       line-height: 1.6rem;
     }
+    &_req {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      @media screen and (max-width: 1023px) {
+        font-size: $size-3;
+        line-height: 1.6rem;
+      }
+    }
   }
   &__submit {
     @extend .button;
     @extend .is-warning;
     font-size: $size-4;
-    margin-top: 0.9rem;
+    margin-top: 0.45rem;
     height: 2.6rem;
     padding-left: 3.75rem;
     padding-right: 3.75rem;
@@ -434,6 +519,22 @@ html {
       margin-top: 0.7rem;
       padding-left: 2.4rem;
       padding-right: 2.4rem;
+    }
+    &_req {
+      padding-left: 2.15rem;
+      padding-right: 2.15rem;
+      @media screen and (max-width: 768px) {
+        margin-top: 1.15rem;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+      }
+      @media screen and (min-width: 769px) and (max-width: 1023px) {
+        font-size: $size-5;
+        height: 2rem;
+        margin-top: 0.7rem;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+      }
     }
   }
   &__check {
@@ -446,6 +547,15 @@ html {
     align-items: stretch;
     @media screen and (max-width: 768px) {
       margin-top: 1.1rem;
+    }
+    &_req {
+      margin-top: 0.4rem;
+      @media screen and (max-width: 768px) {
+        margin-top: 1.6rem;
+      }
+      @media screen and (min-width: 769px) and (max-width: 1023px) {
+        margin-top: 0rem;
+      }
     }
 
     & .checkbox__input {
@@ -504,6 +614,15 @@ html {
       }
       @media screen and (max-width: 1023px) {
         white-space: normal;
+      }
+      &_req {
+        font-size: $size-6;
+        @media screen and (max-width: 1023px) {
+          font-size: $size-7;
+        }
+        @media screen and (max-width: 1023px) {
+          white-space: normal; ////////////////////
+        }
       }
     }
   }
@@ -585,6 +704,29 @@ html {
           @media screen and (max-width: 768px) {
             font-size: $size-4;
             margin-top: -0.25rem;
+          }
+        }
+      }
+    }
+    &_req {
+      & label {
+        margin-top: 0.8rem;
+        @media screen and (max-width: 1023px) {
+          font-size: $size-5;
+        }
+      }
+      & div {
+        & input {
+          @media screen and (max-width: 1023px) {
+            font-size: $size-5;
+            margin-top: 0.2rem;
+            height: 2.4em;
+            padding: 0.3rem 1.1rem;
+          }
+        }
+        & span {
+          @media screen and (max-width: 1023px) {
+            font-size: $size-4;
           }
         }
       }

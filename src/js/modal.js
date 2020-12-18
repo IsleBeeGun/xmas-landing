@@ -1,17 +1,49 @@
-const modalWindow = document.querySelector('.modal-window');
-const modalBackdrop = document.querySelector('.modal-backdrop');
-const modalExit = document.querySelector('.modal-exit');
+const msgWindow = document.getElementById('msgWindow');
+const msgBackdrop = document.getElementById('msgBackdrop');
+const msgExit = document.getElementById('msgExit');
 
-const closeModal = () => {
-  modalBackdrop.setAttribute('style', 'visibility:hidden; opacity: 0;');
-  modalWindow.setAttribute('style', 'visibility:hidden; opacity: 0;');
-  document.querySelector('html').style.overflow = 'visible';
+const closeMsg = () => {
+  msgBackdrop.setAttribute(
+    'style',
+    'display:block; visibility:hidden; opacity: 0;'
+  );
+  msgWindow.setAttribute(
+    'style',
+    'display:block; visibility:hidden; opacity: 0;'
+  );
+  document.querySelector('body').style.overflow = 'visible';
 };
 
-modalExit.addEventListener('click', event => {
-  closeModal();
+msgExit.addEventListener('click', event => {
+  closeMsg();
 });
 
-modalBackdrop.addEventListener('click', event => {
-  closeModal();
+msgBackdrop.addEventListener('click', event => {
+  closeMsg();
+});
+
+////////////////
+
+const reqWindow = document.getElementById('reqWindow');
+const reqBackdrop = document.getElementById('reqBackdrop');
+const reqExit = document.getElementById('reqExit');
+
+const closeReq = () => {
+  reqBackdrop.setAttribute(
+    'style',
+    'display:block; visibility:hidden; opacity: 0;'
+  );
+  reqWindow.setAttribute(
+    'style',
+    'display:block; visibility:hidden; opacity: 0;'
+  );
+  document.querySelector('body').style.overflow = 'visible';
+};
+
+reqExit.addEventListener('click', event => {
+  closeReq();
+});
+
+reqBackdrop.addEventListener('click', event => {
+  closeReq();
 });

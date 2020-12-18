@@ -18,7 +18,7 @@
   <script defer="" src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <script>document.addEventListener('DOMContentLoaded', function () {
   if (typeof window.ShadowRoot !== 'function') {
-    var notifiers = document.querySelectorAll('popup-notify');
+    var notifiers = document.getElementByIdAll('popup-notify');
     var nIndex = 0,
         nLength = notifiers.length;
 
@@ -33,12 +33,73 @@
 <body style="overflow-x: hidden;">
 
 
-  <!-- Modal -->
-  <div class="modal-backdrop"></div>
-  <div class="modal-window">
-    <span class="modal-exit">&times;</span>
-    <div class="modal-message content"></div>
+
+
+  <!-- Modal Message (msg) -->
+  <div class="modal-backdrop" id="msgBackdrop"></div>
+  <div class="modal-window" id="msgWindow">
+    <span class="modal-exit" id="msgExit">&times;</span>
+    <div class="modal-message" id="msgBody"></div>
   </div>
+
+  <!-- Modal Request (req) -->
+  <div class="modal-backdrop" id="reqBackdrop"></div>
+  <div class="modal-window" id="reqWindow">
+    <span class="modal-exit" id="reqExit">&times;</span>
+    <div class="modal-message" id="reqBody">
+      <div class="container">
+        <form class="columns is-multiline callback callback_req" id="request-form">
+          <div class="column is-full">
+            <h2 class="callback__title callback__title_req">Оставьте заявку на расчёт<br>
+              страхового полиса</h2>
+          </div>
+          <div class="column is-half">
+            <div class="field callback__field callback__field_req">
+              <label class="label" for="callbackName">Ваше имя<span class="has-text-danger">*</span>:</label>
+              <div class="control has-icons-right">
+                <input class="input" type="text" id="requestName" name="name" placeholder="Иван" autocomplete="on" title="Как к Вам следует обращаться?" required="">
+                <span class="icon is-right is-invisible">
+                  <i class="fas fa-check has-text-success"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="field callback__field callback__field_req">
+              <label class="label" for="callbackPhone">Телефон<span class="has-text-danger">*</span>:</label>
+              <div class="control has-icons-right">
+                <input class="input" type="tel" id="requestPhone" name="phone" placeholder="+7(___) ___-__-__" autocomplete="on" title="Номер телефона, по которому мы Вам перезвоним" required="">
+                <span class="icon is-right is-invisible">
+                  <i class="fas fa-check has-text-success"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="column is-full">
+            <label class="callback__check callback__check_req">
+              <span class="checkbox__input">
+                <input type="checkbox" name="checkbox" required="">
+                <span class="checkbox__control">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-width="5" d="M1.73 12.91l6.37 6.37L22.79 4.59"></path>
+                  </svg>
+                </span>
+              </span>
+              <span class="checkbox__label checkbox__label_req">Я согласен на обработку <a href="https://euro-ins.ru/calc/files/personal_data.pdf" target="_blank" rel="noopener noreferrer">Персональных данных (ПД)</a> и ознакомился с <a href="https://euro-ins.ru/calc/files/soglasie-na-obrabotku-pd.pdf" target="_blank" rel="noopener noreferrer">Политикой
+                  защиты и обработки
+                  ПД.</a></span>
+            </label>
+          </div>
+          <div class="column is-full">
+            <button class="callback__submit callback__submit_req" type="submit">
+              Получить расчёт
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Top -->
   <section class="section p-0 top">
@@ -60,9 +121,22 @@
             <p class="is-hidden-touch" style="font-size: 25px; padding-top: 1.1875rem; letter-spacing: 0rem; color: white">
               Акция действует до 10.01.2021
             </p>
-            <a href="#cards" class="hero-button">
+            <!-- <a href="#cards" class="hero-button">
               Выбрать полис
-            </a>
+            </a> -->
+            <button href="#cards" class="hero-button" onclick="testMsg()">
+              Выбрать полис
+            </button>
+            <script>var testMsg = function testMsg() {
+  var errorMessageHTML = "-----"; // document.getElementById(
+  //   'reqBody'
+  // ).innerHTML = errorMessageHTML;
+  //
+
+  document.querySelector('body').style.overflow = 'hidden';
+  document.getElementById('reqBackdrop').setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
+  document.getElementById('reqWindow').setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
+};</script>
           </div>
         </div>
       </div>

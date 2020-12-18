@@ -10226,16 +10226,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 /* adjusting font-size for rem */
 html {
   font-size: 16px;
-  overflow-x: initial !important;
-  overflow-y: initial !important;
 }
 
 .modal-backdrop {
   transition: visibility 0.2s linear, opacity 0.2s linear;
+  display: none;
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  display: block;
   top: 0;
   left: 0;
   width: 100%;
@@ -10245,36 +10243,74 @@ html {
 }
 .modal-window {
   transition: visibility 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  display: none;
   visibility: hidden;
   opacity: 0;
   position: fixed;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
   padding: 2rem;
   padding-bottom: 4rem;
+  padding-top: 1.7rem;
   top: 30vh;
-  left: calc(50% - 15rem);
-  width: 30rem;
-  background: white;
+  left: calc(50% - 25.5rem);
+  width: 51rem;
+  min-height: 19.9rem;
+  background: url(/bg-modal.86508ce6.svg), linear-gradient(#0a1971, #0a1a75 40%);
+  background-repeat: no-repeat, repeat;
+  background-size: auto, cover;
+  background-position: bottom -20px left, top left;
   box-shadow: 0 0 10px #121837;
   z-index: 100;
   border-radius: 30px;
 }
-@media screen and (max-width: 559px) {
+@media screen and (max-width: 768px) {
   .modal-window {
-    top: 5vh;
-    left: calc(50% - 8rem);
-    width: 16rem;
+    background-position: bottom -25px left, top left;
+    top: 10vh;
+    left: calc(50% - 9.0625rem);
+    width: 18.125rem;
+    padding: 1.7rem 1rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .modal-window {
+    top: 10vh;
+    left: calc(50% - 24rem);
+    width: 48rem;
   }
 }
 .modal-exit {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
   cursor: pointer;
-  align-self: flex-end;
   font-size: 2rem;
   line-height: 1rem;
   font-weight: bold;
   margin-bottom: 2rem;
+  color: white;
+  transition: color 0.2s linear;
+}
+@media screen and (max-width: 768px) {
+  .modal-exit {
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+}
+.modal-exit:hover {
+  color: #ffcc00;
+}
+.modal-message {
+  text-align: center;
+}
+.modal-message .success {
+  margin-top: 0.8rem;
+  font-size: 1.875rem;
+  color: white;
+}
+.modal-message .error {
+  font-size: 1.875rem;
+  color: #f2323f;
 }
 
 .top {
@@ -10514,7 +10550,7 @@ html {
 }
 @media screen and (max-width: 768px) {
   .callback {
-    margin-top: 5.7rem;
+    margin-top: 0rem;
   }
   .callback .column {
     padding-left: 0.65rem;
@@ -10549,6 +10585,49 @@ html {
     padding-bottom: 0.52rem;
   }
 }
+.callback_req {
+  text-align: left;
+  margin-top: 0rem;
+  padding-bottom: 4.5rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+}
+.callback_req .is-full:last-child {
+  padding: 0;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .callback_req {
+    padding: 0;
+    padding-bottom: 4.8rem;
+  }
+  .callback_req .column {
+    padding: 0;
+  }
+  .callback_req .column:nth-child(1) {
+    padding: 0;
+    padding-bottom: 0.8rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .callback_req {
+    margin-top: 0rem;
+  }
+  .callback_req .column {
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+    padding-top: 0.46rem;
+    padding-bottom: 0rem;
+  }
+  .callback_req .column:nth-child(1) {
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0.7rem;
+    padding-bottom: 0.65rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
 .callback__title {
   font-size: 2.1875rem;
   line-height: 2.625rem;
@@ -10562,15 +10641,45 @@ html {
     line-height: 1.6rem;
   }
 }
+.callback__title_req {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+@media screen and (max-width: 1023px) {
+  .callback__title_req {
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+  }
+}
 .callback__submit {
   font-size: 1.0625rem;
-  margin-top: 0.9rem;
+  margin-top: 0.45rem;
   height: 2.6rem;
   padding-left: 3.75rem;
   padding-right: 3.75rem;
 }
 @media screen and (max-width: 768px) {
   .callback__submit {
+    font-size: 0.9375rem;
+    height: 2rem;
+    margin-top: 0.7rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+}
+.callback__submit_req {
+  padding-left: 2.15rem;
+  padding-right: 2.15rem;
+}
+@media screen and (max-width: 768px) {
+  .callback__submit_req {
+    margin-top: 1.15rem;
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .callback__submit_req {
     font-size: 0.9375rem;
     height: 2rem;
     margin-top: 0.7rem;
@@ -10590,6 +10699,19 @@ html {
 @media screen and (max-width: 768px) {
   .callback__check {
     margin-top: 1.1rem;
+  }
+}
+.callback__check_req {
+  margin-top: 0.4rem;
+}
+@media screen and (max-width: 768px) {
+  .callback__check_req {
+    margin-top: 1.6rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .callback__check_req {
+    margin-top: 0rem;
   }
 }
 .callback__check .checkbox__input {
@@ -10649,6 +10771,19 @@ html {
 }
 @media screen and (max-width: 1023px) {
   .callback__check .checkbox__label {
+    white-space: normal;
+  }
+}
+.callback__check .checkbox__label_req {
+  font-size: 0.75rem;
+}
+@media screen and (max-width: 1023px) {
+  .callback__check .checkbox__label_req {
+    font-size: 0.635rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .callback__check .checkbox__label_req {
     white-space: normal;
   }
 }
@@ -10740,6 +10875,27 @@ html {
   .callback__field_double div span {
     font-size: 1.0625rem;
     margin-top: -0.25rem;
+  }
+}
+.callback__field_req label {
+  margin-top: 0.8rem;
+}
+@media screen and (max-width: 1023px) {
+  .callback__field_req label {
+    font-size: 0.9375rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .callback__field_req div input {
+    font-size: 0.9375rem;
+    margin-top: 0.2rem;
+    height: 2.4em;
+    padding: 0.3rem 1.1rem;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .callback__field_req div span {
+    font-size: 1.0625rem;
   }
 }
 

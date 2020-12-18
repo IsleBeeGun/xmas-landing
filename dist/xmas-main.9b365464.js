@@ -189,22 +189,39 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../fonts/Lato-Black.ttf":[["Lato-Black.a6dd37ab.ttf","fonts/Lato-Black.ttf"],"fonts/Lato-Black.ttf"],"./../fonts/Lato-Bold.woff2":[["Lato-Bold.a497623e.woff2","fonts/Lato-Bold.woff2"],"fonts/Lato-Bold.woff2"],"./../fonts/Lato-Bold.woff":[["Lato-Bold.2ba61289.woff","fonts/Lato-Bold.woff"],"fonts/Lato-Bold.woff"],"./../fonts/Lato-Regular.woff2":[["Lato-Regular.1c034558.woff2","fonts/Lato-Regular.woff2"],"fonts/Lato-Regular.woff2"],"./../fonts/Lato-Regular.woff":[["Lato-Regular.5200f20d.woff","fonts/Lato-Regular.woff"],"fonts/Lato-Regular.woff"],"./../fonts/Lato-Light.woff2":[["Lato-Light.0b4c33d0.woff2","fonts/Lato-Light.woff2"],"fonts/Lato-Light.woff2"],"./../fonts/Lato-Light.woff":[["Lato-Light.e23788da.woff","fonts/Lato-Light.woff"],"fonts/Lato-Light.woff"],"./../fonts/Lato-Italic.woff2":[["Lato-Italic.f9859c70.woff2","fonts/Lato-Italic.woff2"],"fonts/Lato-Italic.woff2"],"./../fonts/Lato-Italic.woff":[["Lato-Italic.4aa7727b.woff","fonts/Lato-Italic.woff"],"fonts/Lato-Italic.woff"],"./../images/bg-hero-top.svg":[["bg-hero-top.c01f9fa2.svg","images/bg-hero-top.svg"],"images/bg-hero-top.svg"],"./../images/bg-hero.svg":[["bg-hero.6c7df34c.svg","images/bg-hero.svg"],"images/bg-hero.svg"],"./../images/bg-hero-top-xs.svg":[["bg-hero-top-xs.3e2795b6.svg","images/bg-hero-top-xs.svg"],"images/bg-hero-top-xs.svg"],"./../images/bg-callback-bottom.svg":[["bg-callback-bottom.37733506.svg","images/bg-callback-bottom.svg"],"images/bg-callback-bottom.svg"],"./../images/bg-callback-top.svg":[["bg-callback-top.18d3accf.svg","images/bg-callback-top.svg"],"images/bg-callback-top.svg"],"./../images/bg-callback-top-xs.svg":[["bg-callback-top-xs.3a48c164.svg","images/bg-callback-top-xs.svg"],"images/bg-callback-top-xs.svg"],"./../images/santa.svg":[["santa.2df068fa.svg","images/santa.svg"],"images/santa.svg"],"./../images/candycane1.svg":[["candycane1.10c426ca.svg","images/candycane1.svg"],"images/candycane1.svg"],"./../images/candycane2.svg":[["candycane2.09b97b35.svg","images/candycane2.svg"],"images/candycane2.svg"],"./../images/reindeer.svg":[["reindeer.1290f56d.svg","images/reindeer.svg"],"images/reindeer.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/modal.js":[function(require,module,exports) {
-var modalWindow = document.querySelector('.modal-window');
-var modalBackdrop = document.querySelector('.modal-backdrop');
-var modalExit = document.querySelector('.modal-exit');
+},{"./../fonts/Lato-Black.ttf":[["Lato-Black.a6dd37ab.ttf","fonts/Lato-Black.ttf"],"fonts/Lato-Black.ttf"],"./../fonts/Lato-Bold.woff2":[["Lato-Bold.a497623e.woff2","fonts/Lato-Bold.woff2"],"fonts/Lato-Bold.woff2"],"./../fonts/Lato-Bold.woff":[["Lato-Bold.2ba61289.woff","fonts/Lato-Bold.woff"],"fonts/Lato-Bold.woff"],"./../fonts/Lato-Regular.woff2":[["Lato-Regular.1c034558.woff2","fonts/Lato-Regular.woff2"],"fonts/Lato-Regular.woff2"],"./../fonts/Lato-Regular.woff":[["Lato-Regular.5200f20d.woff","fonts/Lato-Regular.woff"],"fonts/Lato-Regular.woff"],"./../fonts/Lato-Light.woff2":[["Lato-Light.0b4c33d0.woff2","fonts/Lato-Light.woff2"],"fonts/Lato-Light.woff2"],"./../fonts/Lato-Light.woff":[["Lato-Light.e23788da.woff","fonts/Lato-Light.woff"],"fonts/Lato-Light.woff"],"./../fonts/Lato-Italic.woff2":[["Lato-Italic.f9859c70.woff2","fonts/Lato-Italic.woff2"],"fonts/Lato-Italic.woff2"],"./../fonts/Lato-Italic.woff":[["Lato-Italic.4aa7727b.woff","fonts/Lato-Italic.woff"],"fonts/Lato-Italic.woff"],"./../images/bg-modal.svg":[["bg-modal.86508ce6.svg","images/bg-modal.svg"],"images/bg-modal.svg"],"./../images/bg-hero-top.svg":[["bg-hero-top.c01f9fa2.svg","images/bg-hero-top.svg"],"images/bg-hero-top.svg"],"./../images/bg-hero.svg":[["bg-hero.6c7df34c.svg","images/bg-hero.svg"],"images/bg-hero.svg"],"./../images/bg-hero-top-xs.svg":[["bg-hero-top-xs.3e2795b6.svg","images/bg-hero-top-xs.svg"],"images/bg-hero-top-xs.svg"],"./../images/bg-callback-bottom.svg":[["bg-callback-bottom.37733506.svg","images/bg-callback-bottom.svg"],"images/bg-callback-bottom.svg"],"./../images/bg-callback-top.svg":[["bg-callback-top.18d3accf.svg","images/bg-callback-top.svg"],"images/bg-callback-top.svg"],"./../images/bg-callback-top-xs.svg":[["bg-callback-top-xs.3a48c164.svg","images/bg-callback-top-xs.svg"],"images/bg-callback-top-xs.svg"],"./../images/santa.svg":[["santa.2df068fa.svg","images/santa.svg"],"images/santa.svg"],"./../images/candycane1.svg":[["candycane1.10c426ca.svg","images/candycane1.svg"],"images/candycane1.svg"],"./../images/candycane2.svg":[["candycane2.09b97b35.svg","images/candycane2.svg"],"images/candycane2.svg"],"./../images/reindeer.svg":[["reindeer.1290f56d.svg","images/reindeer.svg"],"images/reindeer.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/modal.js":[function(require,module,exports) {
+var msgWindow = document.getElementById('msgWindow');
+var msgBackdrop = document.getElementById('msgBackdrop');
+var msgExit = document.getElementById('msgExit');
 
-var closeModal = function closeModal() {
-  modalBackdrop.setAttribute('style', 'visibility:hidden; opacity: 0;');
-  modalWindow.setAttribute('style', 'visibility:hidden; opacity: 0;');
-  document.querySelector('html').style.overflow = 'visible';
+var closeMsg = function closeMsg() {
+  msgBackdrop.setAttribute('style', 'display:block; visibility:hidden; opacity: 0;');
+  msgWindow.setAttribute('style', 'display:block; visibility:hidden; opacity: 0;');
+  document.querySelector('body').style.overflow = 'visible';
 };
 
-modalExit.addEventListener('click', function (event) {
-  closeModal();
+msgExit.addEventListener('click', function (event) {
+  closeMsg();
 });
-modalBackdrop.addEventListener('click', function (event) {
-  closeModal();
+msgBackdrop.addEventListener('click', function (event) {
+  closeMsg();
+}); ////////////////
+
+var reqWindow = document.getElementById('reqWindow');
+var reqBackdrop = document.getElementById('reqBackdrop');
+var reqExit = document.getElementById('reqExit');
+
+var closeReq = function closeReq() {
+  reqBackdrop.setAttribute('style', 'display:block; visibility:hidden; opacity: 0;');
+  reqWindow.setAttribute('style', 'display:block; visibility:hidden; opacity: 0;');
+  document.querySelector('body').style.overflow = 'visible';
+};
+
+reqExit.addEventListener('click', function (event) {
+  closeReq();
+});
+reqBackdrop.addEventListener('click', function (event) {
+  closeReq();
 });
 },{}],"js/popupNotify.js":[function(require,module,exports) {
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -6440,257 +6457,277 @@ var validateField = function validateField(event, inputMask) {
       colorWarning(target.nextElementSibling.firstChild);
       target.nextElementSibling.firstChild.style.borderColor = '#ffcc00';
     } else {
-      //console.log(target.nextElementSibling);
       colorSuccess(target.nextElementSibling.firstChild);
       target.nextElementSibling.firstChild.style.borderColor = 'hsl(141, 71%, 48%)';
       target.nextElementSibling.firstChild.style.color = 'rgb(54, 54, 54)';
-    } //REGEX_NAME.test(target.value) ? setCssValid(target) : setCssInvalid(target);
+    }
+  }
+}; //////////////////////////////////////////////////////////////////////////////////////////
 
-  } // if (target.name == 'day') {
-  //   // color validation
-  //   let month = target.closest('.field-body').children[1].children[0]
-  //     .children[0];
-  //   let year = target.closest('.field-body').children[2].children[0]
-  //     .children[0];
-  //   REGEX_DAY.test(target.value) ? setCssValid(target) : setCssInvalid(target);
-  //   if (
-  //     REGEX_MONTH.test(month.value) &&
-  //     REGEX_YEAR.test(year.value) &&
-  //     REGEX_DAY.test(target.value)
-  //   ) {
-  //     setCssValid(year);
-  //     setCssValid(month);
-  //   } else {
-  //     if (REGEX_YEAR.test(year.value)) {
-  //       colorSuccess(year);
-  //       hideCheck(year);
-  //     } else {
-  //       setCssInvalid(year);
-  //     }
-  //     REGEX_MONTH.test(month.value) ? colorSuccess(month) : colorWarning(month);
-  //   }
-  //   // reset if wrong
-  //   if (!'0123'.includes(target.value[0])) {
-  //     setCssInvalid(target);
-  //     inputMask.value = '';
-  //   }
-  //   if (+target.value < 0 || +target.value > 31) {
-  //     inputMask.value = '';
-  //   }
-  //   if (target.value === '00') {
-  //     setCssInvalid(target);
-  //     inputMask.value = '';
-  //   }
-  // }
-  // if (target.name == 'month') {
-  //   // color validation
-  //   let day = target.closest('.field-body').children[0].children[0].children[0];
-  //   let year = target.closest('.field-body').children[2].children[0]
-  //     .children[0];
-  //   REGEX_MONTH.test(target.value)
-  //     ? setCssValid(target)
-  //     : setCssInvalid(target);
-  //   if (
-  //     REGEX_DAY.test(day.value) &&
-  //     REGEX_YEAR.test(year.value) &&
-  //     REGEX_MONTH.test(target.value)
-  //   ) {
-  //     setCssValid(year);
-  //     setCssValid(day);
-  //   } else {
-  //     if (REGEX_YEAR.test(year.value)) {
-  //       colorSuccess(year);
-  //       hideCheck(year);
-  //     } else {
-  //       setCssInvalid(year);
-  //     }
-  //     REGEX_DAY.test(day.value) ? colorSuccess(day) : colorWarning(day);
-  //   }
-  //   // reset if wrong
-  //   if (!'01'.includes(target.value[0])) {
-  //     setCssInvalid(target);
-  //     inputMask.value = '';
-  //   }
-  //   if (+target.value < 0 || +target.value > 12) {
-  //     inputMask.value = '';
-  //   }
-  //   if (target.value === '00') {
-  //     setCssInvalid(target);
-  //     inputMask.value = '';
-  //   }
-  // }
-  // if (target.name == 'year') {
-  //   // color validation
-  //   let day = target.closest('.field-body').children[0].children[0].children[0];
-  //   let month = target.closest('.field-body').children[1].children[0]
-  //     .children[0];
-  //   REGEX_YEAR.test(target.value)
-  //     ? colorSuccess(target)
-  //     : setCssInvalid(target);
-  //   if (
-  //     REGEX_DAY.test(day.value) &&
-  //     REGEX_MONTH.test(month.value) &&
-  //     REGEX_YEAR.test(target.value)
-  //   ) {
-  //     setCssValid(target);
-  //   } else {
-  //     REGEX_MONTH.test(month.value) ? colorSuccess(month) : colorWarning(month);
-  //     REGEX_DAY.test(day.value) ? colorSuccess(day) : colorWarning(day);
-  //   }
-  //   // reset if wrong
-  //   if (!'12'.includes(target.value[0])) {
-  //     setCssInvalid(target);
-  //     inputMask.value = '';
-  //   }
-  // }
-
-};
 
 var handleFormByID = function handleFormByID(id) {
-  // -- Getting form by id
-  var form = document.querySelector("#".concat(id)); // -- Name handling
+  if (id === 'request-form') {
+    var form = document.querySelector("#".concat(id));
+    var name = form.elements.namedItem('name');
+    name.addEventListener('input', validateField);
+    var phone = form.elements.namedItem('phone');
+    var inputMaskPhone = (0, _imask.default)(phone, inputMaskPhoneOptions);
+    phone.addEventListener('input', function (event) {
+      return validateField(event, inputMaskPhone);
+    });
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-  var name = form.elements.namedItem('name');
-  name.addEventListener('input', validateField); // -- Phone handling
+      if (!REGEX_NAME.test(name.value) || !REGEX_PHONE.test(phone.value)) {
+        if (!REGEX_NAME.test(name.value)) {
+          name.focus();
 
-  var phone = form.elements.namedItem('phone');
-  var inputMaskPhone = (0, _imask.default)(phone, inputMaskPhoneOptions);
-  phone.addEventListener('input', function (event) {
-    return validateField(event, inputMaskPhone);
-  }); // -- Time handling
-
-  var from = form.elements.namedItem('from');
-  var inputMaskFrom = (0, _imask.default)(from, inputMaskTimeOptions);
-  from.addEventListener('input', function (event) {
-    return validateField(event, inputMaskFrom);
-  });
-  var till = form.elements.namedItem('till');
-  var inputMaskTill = (0, _imask.default)(till, inputMaskTimeOptions);
-  till.addEventListener('input', function (event) {
-    return validateField(event, inputMaskTill);
-  }); // -- Region handling
-
-  var city = form.elements.namedItem('city');
-  city.addEventListener('change', validateField); // - Handling submit action
-
-  form.addEventListener('submit', function (event) {
-    console.log('clickkkked');
-    event.preventDefault();
-
-    if (!REGEX_NAME.test(name.value) || !REGEX_PHONE.test(phone.value) || !REGEX_TIME.test(from.value) || !REGEX_TIME.test(till.value) || city.value === 'none') {
-      if (city.value === 'none') {
-        city.focus();
-
-        if (city.nextElementSibling.firstChild) {
-          colorWarning(city.nextElementSibling.firstChild);
-          city.nextElementSibling.firstChild.style.borderColor = '#ffcc00';
-          city.nextElementSibling.firstChild.style.color = '#f2323f';
+          if (name.nextElementSibling) {
+            name.nextElementSibling.classList.remove('is-invisible');
+            name.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
+            name.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          }
         }
-      }
 
-      if (!REGEX_NAME.test(name.value)) {
-        name.focus();
+        if (!REGEX_PHONE.test(phone.value)) {
+          phone.focus();
 
-        if (name.nextElementSibling) {
-          name.nextElementSibling.classList.remove('is-invisible');
-          name.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
-          name.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          if (phone.nextElementSibling) {
+            phone.nextElementSibling.classList.remove('is-invisible');
+            phone.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
+            phone.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          }
         }
+      } else {
+        var finName = name.value;
+        var finPhone = phone.value; //const finPhone = phone.value.replace(/\s+/g, '');
+
+        var body = {
+          insType: 1,
+          name: finName,
+          phone: finPhone,
+          email: 'nomail@no.no',
+          individual: true,
+          comment: 'test',
+          agreement: true,
+          region: '-'
+        }; // v------------------ sending request -----------------v
+        //
+        //
+
+        (0, _sendHttpRequest.default)(body, 'https://api.euro-ins.ru/claim/request', 'POST').then(function (res) {
+          //
+          //
+          document.getElementById('reqBackdrop').setAttribute('style', 'display: none; visibility:hidden; opacity: 0;');
+          document.getElementById('reqWindow').setAttribute('style', 'display: none; visibility:hidden; opacity: 0;');
+          document.querySelector('body').style.overflow = 'visible'; //
+          //
+
+          document.querySelector('body').style.overflow = 'hidden';
+          document.getElementById('msgBody').innerHTML = "<h3 class=\"success\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0412\u0430\u0448\u0430 \u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430.</h3>";
+          document.getElementById('msgBackdrop').setAttribute('style', 'display: block; visibility:visible; opacity: 1;');
+          document.getElementById('msgWindow').setAttribute('style', 'display: block; visibility:visible; opacity: 1;'); //
+          //
+        }).catch(function (rej) {
+          if (rej === null) {
+            var errorMessageHTML = "<h3 class='error'>\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A:</h3> <p class=\"has-text-warning\">\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u043E\u0448\u0438\u0431\u043A\u0430</p>";
+            document.getElementById('msgBody').innerHTML = errorMessageHTML;
+          } else {
+            if (rej.errors) {
+              var listOfErrors = [];
+              var listOfErrorsHTML = '';
+
+              for (var key in rej.errors) {
+                listOfErrors.push(rej.errors[key]);
+              }
+
+              for (var _i = 0, _listOfErrors = listOfErrors; _i < _listOfErrors.length; _i++) {
+                var error = _listOfErrors[_i];
+                listOfErrorsHTML += "<li class='mb-2'>".concat(error, "</li>");
+              }
+
+              var _errorMessageHTML = "<h3 class='error'>\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A:</h3> <ul class=\"has-text-warning\" style=\"list-style:square inside;padding:0;\">".concat(listOfErrorsHTML, "</ul>");
+
+              document.getElementById('msgBody').innerHTML = _errorMessageHTML;
+            } else {
+              var _errorMessageHTML2 = "<h3 class='has-text-danger is-size-5'>\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A:</h3> <p class=\"has-text-warning\">".concat(rej.status, "</p>");
+
+              document.getElementById('msgBody').innerHTML = _errorMessageHTML2;
+            }
+          } //
+          //
+
+
+          document.getElementById('reqBackdrop').setAttribute('style', 'display: none; visibility:hidden; opacity: 0;');
+          document.getElementById('reqWindow').setAttribute('style', 'display: none;visibility:hidden; opacity: 0;');
+          document.querySelector('body').style.overflow = 'visible'; //
+          //
+
+          document.querySelector('body').style.overflow = 'hidden';
+          document.getElementById('msgBackdrop').setAttribute('style', 'display: block; visibility:visible; opacity: 1;');
+          document.getElementById('msgWindow').setAttribute('style', 'display: block; visibility:visible; opacity: 1;'); //
+          //
+        }); //
+        //
+        // ^------------------ sending request -----------------^
       }
+    });
+  } else {
+    // -- Getting form by id
+    var _form = document.querySelector("#".concat(id)); // -- Name handling
 
-      if (!REGEX_PHONE.test(phone.value)) {
-        phone.focus();
 
-        if (phone.nextElementSibling) {
-          phone.nextElementSibling.classList.remove('is-invisible');
-          phone.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
-          phone.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+    var _name = _form.elements.namedItem('name');
+
+    _name.addEventListener('input', validateField); // -- Phone handling
+
+
+    var _phone = _form.elements.namedItem('phone');
+
+    var _inputMaskPhone = (0, _imask.default)(_phone, inputMaskPhoneOptions);
+
+    _phone.addEventListener('input', function (event) {
+      return validateField(event, _inputMaskPhone);
+    }); // -- Time handling
+
+
+    var from = _form.elements.namedItem('from');
+
+    var inputMaskFrom = (0, _imask.default)(from, inputMaskTimeOptions);
+    from.addEventListener('input', function (event) {
+      return validateField(event, inputMaskFrom);
+    });
+
+    var till = _form.elements.namedItem('till');
+
+    var inputMaskTill = (0, _imask.default)(till, inputMaskTimeOptions);
+    till.addEventListener('input', function (event) {
+      return validateField(event, inputMaskTill);
+    }); // -- Region handling
+
+    var city = _form.elements.namedItem('city');
+
+    city.addEventListener('change', validateField); // - Handling submit action
+
+    _form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (!REGEX_NAME.test(_name.value) || !REGEX_PHONE.test(_phone.value) || !REGEX_TIME.test(from.value) || !REGEX_TIME.test(till.value) || city.value === 'none') {
+        if (city.value === 'none') {
+          city.focus();
+
+          if (city.nextElementSibling.firstChild) {
+            colorWarning(city.nextElementSibling.firstChild);
+            city.nextElementSibling.firstChild.style.borderColor = '#ffcc00';
+            city.nextElementSibling.firstChild.style.color = '#f2323f';
+          }
         }
-      }
 
-      if (!REGEX_TIME.test(from.value)) {
-        from.focus();
+        if (!REGEX_NAME.test(_name.value)) {
+          _name.focus();
 
-        if (from.nextElementSibling) {
-          from.nextElementSibling.classList.remove('is-invisible');
-          from.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
-          from.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          if (_name.nextElementSibling) {
+            _name.nextElementSibling.classList.remove('is-invisible');
+
+            _name.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
+
+            _name.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          }
         }
-      }
 
-      if (!REGEX_TIME.test(till.value)) {
-        till.focus();
+        if (!REGEX_PHONE.test(_phone.value)) {
+          _phone.focus();
 
-        if (till.nextElementSibling) {
-          till.nextElementSibling.classList.remove('is-invisible');
-          till.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
-          till.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          if (_phone.nextElementSibling) {
+            _phone.nextElementSibling.classList.remove('is-invisible');
+
+            _phone.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
+
+            _phone.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          }
         }
+
+        if (!REGEX_TIME.test(from.value)) {
+          from.focus();
+
+          if (from.nextElementSibling) {
+            from.nextElementSibling.classList.remove('is-invisible');
+            from.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
+            from.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          }
+        }
+
+        if (!REGEX_TIME.test(till.value)) {
+          till.focus();
+
+          if (till.nextElementSibling) {
+            till.nextElementSibling.classList.remove('is-invisible');
+            till.nextElementSibling.children[0].classList.remove('fa-check', 'has-text-success');
+            till.nextElementSibling.children[0].classList.add('fa-exclamation-triangle', 'has-text-danger');
+          }
+        }
+      } else {
+        var finCity = city.value;
+        var finFrom = from.value;
+        var finTill = till.value;
+        var finName = _name.value;
+        var finPhone = _phone.value; //const finPhone = phone.value.replace(/\s+/g, '');
+
+        var body = {
+          agreement: true,
+          name: finName,
+          phone: finPhone,
+          region: finCity,
+          timeFrom: finFrom,
+          timeTo: finTill
+        }; // v------------------ sending request -----------------v
+        //
+        //
+
+        (0, _sendHttpRequest.default)(body, 'https://api.euro-ins.ru/claim/submit/callback', 'POST').then(function (res) {
+          document.querySelector('body').style.overflow = 'hidden';
+          document.getElementById('msgBody').innerHTML = "<h3 class=\"success\">\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0412\u0430\u0448\u0430 \u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430.</h3>";
+          document.getElementById('msgBackdrop').setAttribute('style', 'display: none; visibility:visible; opacity: 1;');
+          document.getElementById('msgWindow').setAttribute('style', 'display: none; visibility:visible; opacity: 1;');
+        }).catch(function (rej) {
+          if (rej === null) {
+            var errorMessageHTML = "<h3 class='error'>\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A:</h3> <p class=\"has-text-warning\">\u041D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u0430\u044F \u043E\u0448\u0438\u0431\u043A\u0430</p>";
+            document.getElementById('msgBody').innerHTML = errorMessageHTML;
+          } else {
+            if (rej.errors) {
+              var listOfErrors = [];
+              var listOfErrorsHTML = '';
+
+              for (var key in rej.errors) {
+                listOfErrors.push(rej.errors[key]);
+              }
+
+              for (var _i2 = 0, _listOfErrors2 = listOfErrors; _i2 < _listOfErrors2.length; _i2++) {
+                var error = _listOfErrors2[_i2];
+                listOfErrorsHTML += "<li class='mb-2'>".concat(error, "</li>");
+              }
+
+              var _errorMessageHTML3 = "<h3 class='error'>\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A:</h3> <ul class=\"has-text-warning\" style=\"list-style:square inside;padding:0;\">".concat(listOfErrorsHTML, "</ul>");
+
+              document.getElementById('msgBody').innerHTML = _errorMessageHTML3;
+            } else {
+              var _errorMessageHTML4 = "<h3 class='has-text-danger is-size-5'>\u0427\u0442\u043E-\u0442\u043E \u043F\u043E\u0448\u043B\u043E \u043D\u0435 \u0442\u0430\u043A:</h3> <p class=\"has-text-warning\">".concat(rej.status, "</p>");
+
+              document.getElementById('msgBody').innerHTML = _errorMessageHTML4;
+            }
+          }
+
+          document.querySelector('body').style.overflow = 'hidden';
+          document.getElementById('msgBackdrop').setAttribute('style', 'display: block; visibility:visible; opacity: 1;');
+          document.getElementById('msgWindow').setAttribute('style', 'display: block; visibility:visible; opacity: 1;');
+        }); //
+        //
+        // ^------------------ sending request -----------------^
       }
-    } else {
-      var finCity = city.value;
-      var finFrom = from.value;
-      var finTill = till.value;
-      var finName = name.value;
-      var finPhone = phone.value.replace(/\s+/g, '');
-      console.log(finCity, finFrom, finTill, finName, finPhone); // v------------------ Getting Recaptcha and sending request -----------------v
-      //
-      //
-      // sendHttpRequest(body, 'http://testapi.euro-ins.ru/account/new', 'POST')
-      //   .then(res => {
-      //     console.log('[first res:]', res);
-      //     document.querySelector('html').style.overflow = 'hidden';
-      //     document.querySelector(
-      //       '.modal-message'
-      //     ).innerHTML = `<h3 class='has-text-success is-size-5'>Заявка на регистрацию успешно отправлена!</h3>`;
-      //     document
-      //       .querySelector('.modal-backdrop')
-      //       .setAttribute('style', 'visibility:visible; opacity: 1;');
-      //     document
-      //       .querySelector('.modal-window')
-      //       .setAttribute('style', 'visibility:visible; opacity: 1;');
-      //   })
-      //   .catch(rej => {
-      //     if (rej === null) {
-      //       const errorMessageHTML = `<h3 class='has-text-danger is-size-5'>Что-то пошло не так:</h3> <p>Неизвестная ошибка</p>`;
-      //       document.querySelector(
-      //         '.modal-message'
-      //       ).innerHTML = errorMessageHTML;
-      //     } else {
-      //       if (rej.errors) {
-      //         const listOfErrors = [];
-      //         let listOfErrorsHTML = '';
-      //         for (const key in rej.errors) {
-      //           listOfErrors.push(rej.errors[key]);
-      //         }
-      //         for (const error of listOfErrors) {
-      //           listOfErrorsHTML += `<li class='mb-2'>${error}</li>`;
-      //         }
-      //         const errorMessageHTML = `<h3 class='has-text-danger is-size-5'>Что-то пошло не так:</h3> <ul>${listOfErrorsHTML}</ul>`;
-      //         document.querySelector(
-      //           '.modal-message'
-      //         ).innerHTML = errorMessageHTML;
-      //       } else {
-      //         const errorMessageHTML = `<h3 class='has-text-danger is-size-5'>Что-то пошло не так:</h3> <p>${rej.status}</p>`;
-      //         document.querySelector(
-      //           '.modal-message'
-      //         ).innerHTML = errorMessageHTML;
-      //       }
-      //     }
-      //     document.querySelector('html').style.overflow = 'hidden';
-      //     document
-      //       .querySelector('.modal-backdrop')
-      //       .setAttribute('style', 'visibility:visible; opacity: 1;');
-      //     document
-      //       .querySelector('.modal-window')
-      //       .setAttribute('style', 'visibility:visible; opacity: 1;');
-      //   });
-      //
-      //
-      // ^------------------ Getting Recaptcha and sending request -----------------^
-    }
-  });
-  return form;
+    });
+
+    return _form;
+  }
 };
 
 exports.handleFormByID = handleFormByID;
@@ -7073,10 +7110,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //import './snowfall';
 // Setup forms
-var callbackForm = (0, _formsLogic.handleFormByID)('callback-form'); //const formMobile = handleFormByID('form-mobile');
-// Setup scroll
+var callbackForm = (0, _formsLogic.handleFormByID)('callback-form');
+var requestForm = (0, _formsLogic.handleFormByID)('request-form'); // Setup scroll
 
 _zenscroll.default.setup(null, 0); // setting top offset to zero
+// test
 },{"../styles/xmas-main.scss":"styles/xmas-main.scss","./modal":"js/modal.js","./popupNotify":"js/popupNotify.js","./dropdownSelector":"js/dropdownSelector.js","./forms-logic":"js/forms-logic.js","zenscroll":"../node_modules/zenscroll/zenscroll.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -7105,7 +7143,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61380" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55132" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
