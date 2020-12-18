@@ -1,6 +1,6 @@
 import '../styles/xmas-main.scss';
 import './modal';
-//import './snowfall';
+import './snowfall';
 import './popupNotify';
 import './dropdownSelector';
 import { handleFormByID } from './forms-logic';
