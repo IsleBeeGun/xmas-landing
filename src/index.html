@@ -27,6 +27,18 @@
         }
       }
     })
+    var selectedInsurance = null;
+    var selectInsurance = (insId) => {
+      selectedInsurance = insId;
+      document.querySelector('body').style.overflow = 'hidden';
+      document
+        .getElementById('reqBackdrop')
+        .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
+      document
+        .getElementById('reqWindow')
+        .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
+    };
+
   </script>
 </head>
 
@@ -129,226 +141,14 @@
               style="font-size: 25px; padding-top: 1.1875rem; letter-spacing: 0rem; color: white">
               Акция действует до 10.01.2021
             </p>
-            <!-- <a href="#cards" class="hero-button">
+            <a href="#cards" class="hero-button">
               Выбрать полис
-            </a> -->
-            <button href="#cards" class="hero-button" onclick="testMsg()">
-              Выбрать полис
-            </button>
-            <script>
-              var testMsg = () => {
-                const errorMessageHTML = `-----`;
-                // document.getElementById(
-                //   'reqBody'
-                // ).innerHTML = errorMessageHTML;
-                //
-                document.querySelector('body').style.overflow = 'hidden';
-                document
-                  .getElementById('reqBackdrop')
-                  .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
-                document
-                  .getElementById('reqWindow')
-                  .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
-              };
-            </script>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </header>
-
-  <!-- Hero -->
-  <header class="hero is-primary hero-bg-desktop pt-4" id="form-desktop-top" style="display: none">
-    <div class="hero-body">
-      <div class="container">
-        <nav class="level pb-4 is-hidden-touch">
-          <!-- Left side -->
-          <div class="level-left">
-            <img class="logo-icon-lg" src="./images/logo_white.svg" alt="Логотип ЕВРОИНС" />
-          </div>
-
-          <!-- Right side -->
-          <div class="level-right">
-            <a href="#benefits" class="level-item has-text-white desktop-menu-fix">Преимущества</a>
-            <a href="#start" class="level-item has-text-white desktop-menu-fix">Начало работы</a>
-            <a href="#faq" class="level-item has-text-white desktop-menu-fix">Вопросы и ответы</a>
-            <a href="" class="level-item has-text-white desktop-menu-fix-last">Вход</a>
-          </div>
-        </nav>
-
-        <div class="columns">
-          <!-- Left side -->
-          <div class="column is-one-third-desktop pr-0">
-            <div class="block content">
-              <h1 class="title is-size-1-widescreen is-size-3-desktop is-size-4" style="margin-bottom: 2rem">
-                Зарабатывай <br />
-                на страховании!
-              </h1>
-              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
-                быстрое КВ с высоким процентом
-              </p>
-              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
-                оперативный андеррайтинг
-              </p>
-              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
-                процессы автоматизированы
-              </p>
-              <p class="is-size-5-desktop is-size-4-widescreen is-size-7">
-                европейский сервис
-              </p>
-            </div>
-          </div>
-
-          <!-- Middle -->
-
-          <div class="column is-one-third-desktop"></div>
-
-          <!-- Right side -->
-
-          <div class="column is-one-third-desktop px-0 is-hidden-touch">
-            <form id="form-desktop" class="tile is-ancestor is-vertical desktop-form">
-              <div class="tile is-parent pb-2">
-                <div class="tile is-child field">
-                  <label class="label pl-2 has-text-weight-normal is-size-7">Ф.И.О. полностью</label>
-                  <div class="control has-icons-right">
-                    <input class="input field-fix" type="text" name="name" placeholder="Фамилия Имя Отчество"
-                      autocomplete="off" title="Фамилия Имя Отчество" required />
-                    <span class="icon is-small is-right is-invisible">
-                      <i class="fas fa-check has-text-success"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tile is-parent pt-0 pb-2">
-                <div class="tile is-child field">
-                  <label class="label pl-2 has-text-weight-normal is-size-7">Номер телефона</label>
-                  <div class="control has-icons-right">
-                    <input class="input" type="tel" name="phone" placeholder="+7 (495) 999-99-99" autocomplete="off"
-                      title="Ваш номер телефона" required />
-                    <span class="icon is-small is-right is-invisible">
-                      <i class="fas fa-check has-text-success"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tile is-vertical field">
-                <div class="tile is-parent field-label mr-0 pt-0 pb-0">
-                  <label class="tile is-child label has-text-left pb-2 pl-2 has-text-weight-normal is-size-7">Дата
-                    рождения</label>
-                </div>
-                <div class="tile is-parent field-body pt-0 pb-0">
-                  <div class="tile is-child field">
-                    <div class="control pr-2">
-                      <input class="input" type="text" name="day" placeholder="31" autocomplete="off"
-                        title="Укажите день" required />
-                    </div>
-                  </div>
-
-                  <div class="tile is-child field">
-                    <div class="control pr-2">
-                      <input class="input" type="text" name="month" placeholder="12" autocomplete="off"
-                        title="Укажите месяц" required />
-                    </div>
-                  </div>
-
-                  <div class="tile is-child is-3 field">
-                    <div class="control has-icons-right">
-                      <input class="input" type="text" name="year" placeholder="1999" autocomplete="off"
-                        title="Укажите год" required />
-                      <span class="icon is-small is-right is-invisible">
-                        <i class="fas fa-check has-text-success"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tile is-parent">
-                <div class="tile is-child control">
-                  <button
-                    class="button is-warning py-5 is-size-6-desktop is-size-5-fullhd is-fullwidth has-text-weight-bold"
-                    type="submit">
-                    Стать агентом ЕВРОИНС
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile form -->
-  <div class="section is-hidden-desktop" id="form-mobile-top" style="display: none">
-    <div class="container">
-      <form class="colums" id="form-mobile">
-        <div class="field">
-          <label class="label pb-2 pl-2 has-text-weight-normal is-size-7">Ф.И.О. полностью</label>
-          <div class="control has-icons-right">
-            <input class="input mobile-input field-fix" type="text" name="name" placeholder="Фамилия Имя Отчество"
-              autocomplete="off" title="Фамилия Имя Отчество" required />
-            <span class="icon is-small is-right is-invisible">
-              <i class="fas fa-check has-text-success"></i>
-            </span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label pb-2 pl-2 has-text-weight-normal is-size-7">Номер телефона</label>
-          <div class="control has-icons-right">
-            <input class="input mobile-input" type="tel" name="phone" placeholder="+7 (495) 999-99-99"
-              autocomplete="off" title="Ваш номер телефона" required />
-            <span class="icon is-small is-right is-invisible">
-              <i class="fas fa-check has-text-success"></i>
-            </span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label has-text-left pb-2 pl-2 has-text-weight-normal is-size-7">Дата рождения</label>
-
-          <div class="columns is-mobile is-gapless field-body pt-0 pb-0">
-            <div class="column field">
-              <div class="control pr-2">
-                <input class="input mobile-input" type="tel" name="day" placeholder="31" autocomplete="off"
-                  title="Укажите день" required />
-              </div>
-            </div>
-
-            <div class="column field">
-              <div class="control pr-2">
-                <input class="input mobile-input" type="tel" name="month" placeholder="12" autocomplete="off"
-                  title="Укажите месяц" required />
-              </div>
-            </div>
-
-            <div class="column is-6 field">
-              <div class="control has-icons-right">
-                <input class="input mobile-input" type="tel" name="year" placeholder="1999" autocomplete="off"
-                  title="Укажите год" required />
-                <span class="icon is-small is-right is-invisible">
-                  <i class="fas fa-check has-text-success"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="control block has-text-centered">
-          <button class="button mt-4 is-warning has-text-weight-bold" type="submit">
-            Стать агентом ЕВРОИНС
-          </button>
-        </div>
-
-        <div class="columns is-mobile is-centered">
-          <div class="column is-one-third mobile-form-spacer"></div>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- Cards -->
   <section class="section cards-bg-desktop">
@@ -387,9 +187,9 @@
                   руб.</span>
               </p>
               <p class="card__price">от <span class="card__bold">6000</span> руб.</p>
-              <a href="#" class="button is-warning card__button">
+              <button class="button is-warning card__button" onclick="selectInsurance(11)">
                 Получить расчет
-              </a>
+              </button>
               <p class="card__xs">
                 Цена полиса зависит от: оказываемых, согласно договору, медицинских услуг; возраста застрахованного;
                 выбора медицинского учреждения;

@@ -133,7 +133,7 @@ export const handleFormByID = id => {
         const finPhone = phone.value;
         //const finPhone = phone.value.replace(/\s+/g, '');
         const body = {
-          insType: 1,
+          insType: window.selectedInsurance,
           name: finName,
           phone: finPhone,
           email: 'nomail@no.no',
