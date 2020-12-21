@@ -135,9 +135,9 @@ body {
     min-height: 19.9rem;
     background: url(../images/bg-modal.svg),
       linear-gradient($primary, #0a1a75 40%);
-    background-repeat: no-repeat, repeat;
+    background-repeat: repeat-x, repeat;
     background-size: auto, cover;
-    background-position: bottom -20px left, top left;
+    background-position: bottom -1.25rem left, top left;
     box-shadow: 0 0 10px darken($info, 20%);
     z-index: 100;
     border-radius: $radius;
