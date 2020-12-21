@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Новогодняя акция ЕВРОИНС</title>
   <meta name="description"
-    content="ЕВРОИНС дарит подарки к Новому Году! Страхование с выгодой до 50%. Акция действует до 10.01.2021" />
+    content="ЕВРОИНС дарит подарки к Новому Году! Страхование с выгодой до 50%. Акция действует до 15.01.2021" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="theme-color" content="#FFFFFF" />
@@ -21,32 +21,32 @@
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof window.ShadowRoot !== 'function') {
         var notifiers = document.getElementByIdAll('popup-notify');
-        var nIndex = 0, nLength = notifiers.length;
+        var nIndex = 0,
+          nLength = notifiers.length;
         for (; nIndex < nLength; nIndex++) {
-          notifiers[nIndex].style.display = "none";
+          notifiers[nIndex].style.display = 'none';
         }
       }
-    })
-    var selectedInsurance = null;
-    var selectInsurance = (insId) => {
-      selectedInsurance = insId;
-      document.querySelector('body').style.overflow = 'hidden';
-      document
-        .getElementById('reqBackdrop')
-        .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
-      document
-        .getElementById('reqWindow')
-        .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
-    };
-
+      //
+      window.selectedInsurance = "none";
+      window.selectInsurance = insType => {
+        selectedInsurance = insType;
+        yaCounter70202242.reachGoal(insType);
+        document.querySelector('html').style.overflow = 'hidden';
+        document
+          .getElementById('reqBackdrop')
+          .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
+        document
+          .getElementById('reqWindow')
+          .setAttribute('style', 'display:block; visibility:visible; opacity: 1;');
+        return true;
+      };
+    });
   </script>
 </head>
 
 
-<body style="overflow-x: hidden;">
-
-
-
+<body>
 
   <!-- Modal Message (msg) -->
   <div class="modal-backdrop" id="msgBackdrop"></div>
@@ -61,16 +61,16 @@
     <span class="modal-exit" id="reqExit">&times;</span>
     <div class="modal-message" id="reqBody">
       <div class="container">
-        <form class="columns is-multiline callback callback_req" id="request-form">
+        <form class="columns is-multiline callback callback_req" id="request-form" autocomplete="off">
           <div class="column is-full">
             <h2 class="callback__title callback__title_req">Оставьте заявку на расчёт<br>
               страхового полиса</h2>
           </div>
           <div class="column is-half">
             <div class="field callback__field callback__field_req">
-              <label class="label" for="callbackName">Ваше имя<span class="has-text-danger">*</span>:</label>
+              <label class="label" for="callbackName">Ваше имя:<span class="has-text-danger">*</span></label>
               <div class="control has-icons-right">
-                <input class="input" type="text" id="requestName" name="name" placeholder="Иван" autocomplete="on"
+                <input class="input" type="text" id="requestName" name="name" placeholder="Иван" autocomplete="off"
                   title="Как к Вам следует обращаться?" required />
                 <span class="icon is-right is-invisible">
                   <i class="fas fa-check has-text-success"></i>
@@ -80,10 +80,10 @@
           </div>
           <div class="column is-half">
             <div class="field callback__field callback__field_req">
-              <label class="label" for="callbackPhone">Телефон<span class="has-text-danger">*</span>:</label>
+              <label class="label" for="callbackPhone">Телефон:<span class="has-text-danger">*</span></label>
               <div class="control has-icons-right">
-                <input class="input" type="tel" id="requestPhone" name="phone" placeholder="+7(___) ___-__-__"
-                  autocomplete="on" title="Номер телефона, по которому мы Вам перезвоним" required />
+                <input class="input" type="tel" id="requestPhone" name="phone" placeholder="+7 (___) ___-__-__"
+                  autocomplete="off" title="Номер телефона, по которому мы Вам перезвоним" required />
                 <span class="icon is-right is-invisible">
                   <i class="fas fa-check has-text-success"></i>
                 </span>
@@ -122,10 +122,27 @@
 
   <!-- Top -->
   <section class="section p-0 top">
-    <div class="container"></div>
+    <div class="container">
+      <div class="level is-mobile">
+        <div class="level-left">
+          <div class="level-item">
+            <img class="top__logo" src="./images/logo-euroins.svg" alt="Перейти на главный сайт EUROINS">
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <div class="top__contacts">
+              <a href="tel:+74959265155">+7 (495) 926-51-55</a>
+              <span>круглосуточно</span>
+              <a href="mailto:info@euro-ins.ru">info@euro-ins.ru</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- New Hero -->
+  <!-- Hero -->
   <header class="hero hero-bg-desktop p-0">
     <div class="hero-body p-0" style="position: relative">
       <canvas id="snowfall"></canvas>
@@ -137,8 +154,8 @@
               <br />
               <span class="has-text-danger">Страхование с выгодой до 50%</span>
             </h1>
-            <p class="is-hidden-touch"
-              style="font-size: 25px; padding-top: 1.1875rem; letter-spacing: 0rem; color: white">
+            <p class="is-hidden-mobile"
+              style="font-size: 1.5625rem; padding-top: 1.1875rem; letter-spacing: 0rem; color: white">
               Акция действует до 10.01.2021
             </p>
             <a href="#cards" class="hero-button">
@@ -187,7 +204,7 @@
                   руб.</span>
               </p>
               <p class="card__price">от <span class="card__bold">6000</span> руб.</p>
-              <button class="button is-warning card__button" onclick="selectInsurance(11)">
+              <button class="button is-warning card__button" onclick="selectInsurance('dms')">
                 Получить расчет
               </button>
               <p class="card__xs">
@@ -232,9 +249,9 @@
                   руб.</span>
               </p>
               <p class="card__price">от <span class="card__bold">1440</span> руб.</p>
-              <a href="#" class="button is-warning card__button">
+              <button href="#" class="button is-warning card__button" onclick="selectInsurance('ns')">
                 Получить расчет
-              </a>
+              </button>
               <p class="card__xs">
                 Цена полиса зависит от: возраста физического лица; иных условий, указанные в договоре страхования. <br>
                 Условия акции действуют в соответсвии с правилами страхования по каждому виду.
@@ -270,9 +287,9 @@
                   руб.</span>
               </p>
               <p class="card__price">от <span class="card__bold">3430</span> руб.</p>
-              <a href="#" class="button is-warning card__button">
+              <button href="#" class="button is-warning card__button" onclick="selectInsurance('property')">
                 Получить расчет
-              </a>
+              </button>
               <p class="card__xs">
                 Цена полиса зависит от: стоимости страхуемого имущества; <br>
                 набора рисков; страхуется ли отделка, движимое домашнее имущество и гражданская ответственность. <br>
@@ -309,9 +326,9 @@
                   руб.</span>
               </p>
               <p class="card__price">от <span class="card__bold">17 000</span> руб.</p>
-              <a href="#" class="button is-warning card__button">
+              <button href="#" class="button is-warning card__button" onclick="selectInsurance('kasko')">
                 Получить расчет
-              </a>
+              </button>
               <p class="card__xs card__xs_smaller">
                 Цена полиса зависит от: статистики угонов определенной марки и модели транспортного средства; от
                 стоимости запчастей и обслуживания на станциях технического обслуживания; от возраста транспортного
@@ -328,20 +345,20 @@
     </div>
   </section>
 
-  <!-- Callback -->
+  <!-- Callback Form -->
   <section class="section callback-bg-desktop">
     <div class="container">
-      <form class="columns is-multiline callback" id="callback-form">
+      <form class="columns is-multiline callback" id="callback-form" autocomplete="off">
         <div class="column is-full">
           <h2 class="callback__title">Остались вопросы? <br>
             Оставьте заявку, и мы Вам перезвоним!</h2>
         </div>
         <div class="column is-half">
           <div class="field callback__field">
-            <label class="label" for="callbackName">Ваше имя<span class="has-text-danger">*</span>:</label>
+            <label class="label" for="callbackName">Ваше имя:<span class="has-text-danger">*</span></label>
             <div class="control has-icons-right">
-              <input class="input" type="text" id="callbackName" name="name" placeholder="Иван" autocomplete="on"
-                title="Как к Вам следует обращаться?" required />
+              <input class="input" type="text" id="callbackName" name="name" placeholder="Иван"
+                autocomplete="new-password" title="Как к Вам следует обращаться?" required />
               <span class="icon is-right is-invisible">
                 <i class="fas fa-check has-text-success"></i>
               </span>
@@ -350,10 +367,10 @@
         </div>
         <div class="column is-half">
           <div class="field callback__field">
-            <label class="label" for="callbackPhone">Телефон<span class="has-text-danger">*</span>:</label>
+            <label class="label" for="callbackPhone">Телефон:<span class="has-text-danger">*</span></label>
             <div class="control has-icons-right">
-              <input class="input" type="tel" id="callbackPhone" name="phone" placeholder="+7(___) ___-__-__"
-                autocomplete="on" title="Номер телефона, по которому мы Вам перезвоним" required />
+              <input class="input" type="tel" id="callbackPhone" name="phone" placeholder="+7 (___) ___-__-__"
+                autocomplete="new-password" title="Номер телефона, по которому мы Вам перезвоним" required />
               <span class="icon is-right is-invisible">
                 <i class="fas fa-check has-text-success"></i>
               </span>
@@ -362,16 +379,16 @@
         </div>
         <div class="column is-half">
           <div class="field callback__field_double">
-            <label class="label" for="callbackFrom">Время звонка<span class="has-text-danger">*</span>:</label>
+            <label class="label" for="callbackFrom">Время звонка:<span class="has-text-danger">*</span></label>
             <div class="control has-icons-right">
-              <input class="input" type="tel" id="callbackFrom" name="from" placeholder="С" autocomplete="on"
+              <input class="input" type="tel" id="callbackFrom" name="from" placeholder="С" autocomplete="off"
                 title="Со скольких мы можем Вам позвонить?" required />
               <span class="icon is-right is-invisible">
                 <i class="fas fa-check has-text-success"></i>
               </span>
             </div>
             <div class="control has-icons-right">
-              <input class="input" type="tel" id="callbackTill" name="till" placeholder="По" autocomplete="on"
+              <input class="input" type="tel" id="callbackTill" name="till" placeholder="По" autocomplete="off"
                 title="До скольких мы можем Вам позвонить?" required />
               <span class="icon is-right is-invisible">
                 <i class="fas fa-check has-text-success"></i>
@@ -381,7 +398,7 @@
         </div>
         <div class="column is-half">
           <div class="field callback__field">
-            <label class="label" for="callbackRegion">Регион<span class="has-text-danger">*</span>:</label>
+            <label class="label" for="callbackRegion">Регион:<span class="has-text-danger">*</span></label>
             <div>
               <select id="callbackRegion" name="city" title="Укажите Ваше месторасположение" required></select>
             </div>
@@ -417,19 +434,91 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="content has-text-centered">
-      <img class="logo-icon" src="./images/logo_white.svg" alt="Логотип ЕВРОИНС" />
-      <p class="mt-4">
-        © 2009-2020, ООО РСО «ЕВРОИНС». <br />
-        Все материалы, размещенные на данном сайте, защищены законом об
-        авторских правах и являются <br />
-        собственностью страховой компании. Лицензии на страхование ЦБ РФ СЛ №
-        3954, СИ № 3954, ОС № 3954-03
-      </p>
+    <div class="content">
+      <div class="footer__container">
+        <div class="footer__logo-container">
+          <img src="./images/logo-euroins.svg" alt="Логотип">
+        </div>
+        <div class="footer__text-container">
+          <p>
+            Акция действует с 00:00 (Мск) 25.12.2020 по 23:59 (Мск) 15.01.2020<br>
+            Для того чтобы принять участие в акции, необходимо оставить заявку на сайте sales.euro-ins.ru на страховой
+            продукт в период срока действия акции.
+            <br><br>
+            *Указанные скидки являются применением поправочного коэффициента в соответствие с тарифами залицензированных
+            правил страхования<br>
+            **При пролонгации полиса акция действует не для всех страховых продуктов
+          </p>
+        </div>
+        <div class="footer__social-container">
+          <a href="https://euro-ins.ru/o-kompanii" target="_blank" rel="noopener noreferrer">Реквизиты</a>
+          <a href="https://euro-ins.ru/o-kompanii/regulations" target="_blank" rel="noopener noreferrer">Правила
+            страхования</a>
+          <span>Мы в социальных сетях:</span>
+          <div class="footer__icons-container">
+            <a href="https://www.facebook.com/euroinsrus/ " target="_blank" rel="noopener noreferrer">
+              <img src="./images/facebook-euroins.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/euroinsrus/" target="_blank" rel="noopener noreferrer">
+              <img src="./images/instagram-euroins.svg" alt="Instagram">
+            </a>
+            <a href="https://vk.com/euroinsrus" target="_blank" rel="noopener noreferrer">
+              <img src="./images/vkontakte-euroins.svg" alt="Vkontakte">
+            </a>
+          </div>
+        </div>
+        <div class="footer__contacts-container">
+          <a href="tel:+74959265155">+7 (495) 926-51-55</a>
+          <span>круглосуточно</span>
+          <a href="mailto:info@euro-ins.ru">info@euro-ins.ru</a>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="./js/xmas-main.js"></script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function () {
+        try {
+          w.yaCounter70202242 = new Ya.Metrika({
+            id: 70202242,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+          });
+        } catch (e) { }
+      });
+
+      var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+      } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/70202242" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N2JFF7K');</script>
+  <!-- End Google Tag Manager -->
+
 </body>
 
 </html>

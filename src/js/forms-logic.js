@@ -131,14 +131,44 @@ export const handleFormByID = id => {
       } else {
         const finName = name.value;
         const finPhone = phone.value;
+        const curMoment = new Date(Date.now());
+        const finDate = `${curMoment.getFullYear()}.${
+          curMoment.getMonth() + 1 > 9
+            ? curMoment.getMonth() + 1
+            : '0' + String(curMoment.getMonth() + 1)
+        }.${curMoment.getDate()}`;
+        const finTime = `${curMoment.getUTCHours() + 3}:${
+          curMoment.getMinutes() > 9
+            ? curMoment.getMinutes()
+            : '0' + curMoment.getMinutes()
+        }`;
+        const finPolis =
+          window.selectedInsurance === 'dms'
+            ? 'ДМС СТОМАТОЛОГИЯ -50%'
+            : window.selectedInsurance === 'ns'
+            ? 'СТРАХОВКА ОТ НЕСЧАСТНОГО СЛУЧАЯ -40%'
+            : window.selectedInsurance === 'property'
+            ? 'СТРАХОВАНИЕ ИМУЩЕСТВА -30%'
+            : window.selectedInsurance === 'kasko'
+            ? 'КАСКО -50%'
+            : 'ОШИБКА: ВЫБРАНО НЕВЕРНОЕ ЗНАЧЕНИЕ';
         //const finPhone = phone.value.replace(/\s+/g, '');
         const body = {
-          insType: window.selectedInsurance,
+          insType:
+            window.selectedInsurance === 'dms'
+              ? 11
+              : window.selectedInsurance === 'ns'
+              ? 13
+              : window.selectedInsurance === 'property'
+              ? 3
+              : window.selectedInsurance === 'kasko'
+              ? 2
+              : 0,
           name: finName,
           phone: finPhone,
           email: 'nomail@no.no',
           individual: true,
-          comment: 'test',
+          comment: `Дата: ${finDate}, Московское время: ${finTime}, Полис: ${finPolis}`,
           agreement: true,
           region: '-',
         };
@@ -162,10 +192,10 @@ export const handleFormByID = id => {
                 'style',
                 'display: none; visibility:hidden; opacity: 0;'
               );
-            document.querySelector('body').style.overflow = 'visible';
+            document.querySelector('html').style.overflow = 'visible';
             //
             //
-            document.querySelector('body').style.overflow = 'hidden';
+            document.querySelector('html').style.overflow = 'hidden';
             document.getElementById(
               'msgBody'
             ).innerHTML = `<h3 class="success">Спасибо, Ваша заявка отправлена.</h3>`;
@@ -219,10 +249,10 @@ export const handleFormByID = id => {
                 'style',
                 'display: none;visibility:hidden; opacity: 0;'
               );
-            document.querySelector('body').style.overflow = 'visible';
+            document.querySelector('html').style.overflow = 'visible';
             //
             //
-            document.querySelector('body').style.overflow = 'hidden';
+            document.querySelector('html').style.overflow = 'hidden';
             document
               .getElementById('msgBackdrop')
               .setAttribute(
@@ -276,6 +306,7 @@ export const handleFormByID = id => {
     // - Handling submit action
     form.addEventListener('submit', event => {
       event.preventDefault();
+      window.yaCounter70202242.reachGoal('questions');
       if (
         !REGEX_NAME.test(name.value) ||
         !REGEX_PHONE.test(phone.value) ||
@@ -372,7 +403,7 @@ export const handleFormByID = id => {
           'POST'
         )
           .then(res => {
-            document.querySelector('body').style.overflow = 'hidden';
+            document.querySelector('html').style.overflow = 'hidden';
             document.getElementById(
               'msgBody'
             ).innerHTML = `<h3 class="success">Спасибо, Ваша заявка отправлена.</h3>`;
@@ -380,13 +411,13 @@ export const handleFormByID = id => {
               .getElementById('msgBackdrop')
               .setAttribute(
                 'style',
-                'display: none; visibility:visible; opacity: 1;'
+                'display: block; visibility:visible; opacity: 1;'
               );
             document
               .getElementById('msgWindow')
               .setAttribute(
                 'style',
-                'display: none; visibility:visible; opacity: 1;'
+                'display: block; visibility:visible; opacity: 1;'
               );
           })
           .catch(rej => {
@@ -411,7 +442,7 @@ export const handleFormByID = id => {
               }
             }
 
-            document.querySelector('body').style.overflow = 'hidden';
+            document.querySelector('html').style.overflow = 'hidden';
             document
               .getElementById('msgBackdrop')
               .setAttribute(
@@ -429,6 +460,7 @@ export const handleFormByID = id => {
         //
         // ^------------------ sending request -----------------^
       }
+      return true;
     });
 
     return form;

@@ -1,5 +1,4 @@
 export default function sendHttpRequest(data, url, method) {
-  //console.log('[Inside XHR:] ', data);
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url);

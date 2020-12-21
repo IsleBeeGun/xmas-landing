@@ -12,5 +12,3 @@ const requestForm = handleFormByID('request-form');
 
 // Setup scroll
 zenScroll.setup(null, 0); // setting top offset to zero
-
-// test

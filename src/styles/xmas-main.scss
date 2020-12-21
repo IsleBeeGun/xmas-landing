@@ -48,13 +48,16 @@ $dark-blue-1: #2a3985;
 $dark-blue-2: #0a1971;
 $primary: $dark-blue-2;
 $info: $dark-blue-1;
+$link: #2562b5;
 $warning: #ffcc00;
 $danger: #f2323f;
 $success: hsl(141, 71%, 48%);
 $light: rgb(245, 245, 245);
 $light-2: #d2d2d2;
-$footer-background-color: $primary;
-$footer-color: white;
+$light-3: #b2b2b2;
+$footer-background-color: white;
+$footer-color: $primary;
+$borderhover: rgba(white, 0.5);
 $input-hover-border-color: $info;
 $input-focus-border-color: $info;
 $input-focus-box-shadow-color: rgba($info, 0.3);
@@ -88,15 +91,19 @@ $text-shadow-menu: 2px 2px 6px rgba($primary, 0.7),
 @import '../../node_modules/bulma/sass/utilities/initial-variables.sass';
 @import '../../node_modules/bulma/bulma.sass';
 
-/* import slim-select */
-//@import './slimselect.css';
-
 /* adjusting font-size for rem */
-
 html {
   font-size: 16px;
-  // overflow-x: initial !important;
-  // overflow-y: initial !important;
+  @media screen and (min-width: 1920px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 3000px) {
+    font-size: 26px;
+  }
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .modal {
@@ -149,6 +156,7 @@ html {
   }
   &-exit {
     position: absolute;
+    z-index: 100;
     top: 1.5rem;
     right: 1.5rem;
     @media screen and (max-width: 768px) {
@@ -182,31 +190,264 @@ html {
 }
 
 .top {
-  @media screen and (max-width: 1023px) {
+  height: 5.25rem;
+  @media screen and (max-width: 768px) {
     height: 4.75rem;
   }
-  height: 5.25rem;
+  &__logo {
+    margin-top: 1.325rem;
+    margin-left: 0.45rem;
+    height: 2.73rem;
+    width: auto;
+    @media screen and (max-width: 768px) {
+      height: 1.95rem;
+      margin-top: 1.95rem;
+      margin-left: 0.9rem;
+    }
+    @media screen and (min-width: 769px) and (max-width: 1087px) {
+      margin-left: 4rem;
+    }
+  }
+  &__contacts {
+    margin-top: 0.95rem;
+    margin-right: 0.35rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    font-size: $size-5;
+    color: $primary;
+    @media screen and (max-width: 768px) {
+      font-size: $size-7;
+      margin-top: 2.15rem;
+      margin-right: 0.95rem;
+    }
+    @media screen and (min-width: 769px) and (max-width: 1087px) {
+      margin-right: 4rem;
+    }
+    & a {
+      color: $primary;
+      &:hover {
+        color: $info;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.footer {
+  @media screen and (max-width: 768px) {
+    padding: 1.2rem 0.9rem;
+  }
+  @media screen and (min-width: 769px) and (max-width: 1087px) {
+    padding: 3rem 3rem;
+  }
+  &__container {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    @media screen and (max-width: 1087px) {
+      flex-flow: row wrap;
+      margin-top: 0;
+    }
+  }
+  &__logo-container {
+    order: 1;
+    min-width: 22.1rem;
+    @media screen and (max-width: 520px) {
+      min-width: 50%;
+      max-width: 50%;
+      margin: 0;
+    }
+    @media screen and (min-width: 521px) and (max-width: 1087px) {
+      min-width: 30%;
+      max-width: 30%;
+      margin: 0;
+    }
+    & img {
+      margin-left: 7.9rem;
+      height: 2.7rem;
+      width: auto;
+      @media screen and (max-width: 1087px) {
+        height: 1.95rem;
+        margin-left: 0rem;
+      }
+    }
+  }
+  &__text-container {
+    order: 2;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 33.15rem;
+    min-height: 8.65rem;
+    @media screen and (max-width: 1087px) {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: auto;
+      margin-top: 1.05rem;
+      order: 4;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding: 0;
+      padding-top: 0.6rem;
+      border-top: 1px solid #e3e3e3;
+    }
+    @media screen and (min-width: 1441px) {
+      margin-left: auto;
+    }
+    & p {
+      margin-top: 0.3rem;
+      color: $light-3;
+      font-size: $size-6;
+      line-height: 0.875rem;
+      @media screen and (max-width: 1087px) {
+        font-size: $size-7;
+        line-height: 0.75rem;
+      }
+    }
+  }
+  &__social-container {
+    order: 3;
+    display: flex;
+    min-width: 11.35rem;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    padding-left: 1.35rem;
+    padding-right: 1.35rem;
+    font-size: $size-6;
+    @media screen and (max-width: 520px) {
+      min-width: 100%;
+      max-width: 100%;
+      margin-top: 1.45rem;
+      padding: 0;
+    }
+    @media screen and (min-width: 521px) and (max-width: 1087px) {
+      order: 2;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      min-width: 40%;
+      max-width: 40%;
+      margin: 0 auto;
+      padding: 0;
+      & > *:nth-child(2n) {
+        padding-left: 1rem;
+      }
+    }
+    & > a {
+      margin-bottom: 1.1rem;
+      color: $primary;
+      @media screen and (max-width: 520px) {
+        margin-bottom: 0.6rem;
+      }
+      @media screen and (min-width: 521px) and (max-width: 1087px) {
+        margin-bottom: 0.6rem;
+        min-width: 50%;
+        max-width: 50%;
+      }
+      &:hover {
+        color: $info;
+        text-decoration: underline;
+      }
+    }
+    & > span {
+      margin-bottom: 0.8rem;
+      @media screen and (max-width: 520px) {
+        margin-bottom: 0.4rem;
+      }
+      @media screen and (min-width: 521px) and (max-width: 1087px) {
+        margin-bottom: 0.6rem;
+        min-width: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+  &__icons-container {
+    display: block;
+    height: 1.6rem;
+    margin-bottom: 0.2rem;
+    & a {
+      display: inline-block;
+      margin: 0;
+      margin-right: 1rem;
+      @media screen and (max-width: 520px) {
+        margin-right: 0.9rem;
+      }
+      @media screen and (min-width: 521px) and (max-width: 1087px) {
+        margin-right: auto;
+      }
+      & img {
+        height: 1.5625rem;
+        width: 1.5625rem;
+      }
+    }
+    @media screen and (min-width: 521px) and (max-width: 1087px) {
+      display: flex;
+      flex-flow: row nowrap;
+      min-width: 50%;
+      max-width: 50%;
+    }
+  }
+  &__contacts-container {
+    order: 4;
+    margin-left: auto;
+    min-width: 9.5625rem;
+    margin-right: 7.6rem;
+    padding-left: 1.35rem;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: $size-5;
+    color: $primary;
+    @media screen and (max-width: 530px) {
+      order: 2;
+      font-size: $size-7;
+      min-width: 50%;
+      max-width: 50%;
+      margin: 0;
+      text-align: right;
+      margin-top: -0.2rem;
+    }
+    @media screen and (min-width: 521px) and (max-width: 1087px) {
+      order: 3;
+      font-size: $size-7;
+      min-width: 30%;
+      max-width: 30%;
+      margin: 0;
+      text-align: right;
+      margin-top: -0.2rem;
+    }
+    & a {
+      color: $primary;
+      &:hover {
+        color: $info;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 #snowfall {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 596px;
+  height: 37.25rem;
   pointer-events: none;
 }
 
 .hero-title {
   @extend .is-size-2;
-  @extend .is-size-1-desktop;
+  @extend .is-size-1-tablet;
   @extend .has-text-white;
   @extend .px-5;
   font-weight: bold;
   line-height: 2.625rem;
   margin-top: 6.05rem;
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 768px) {
+    margin: 0 auto;
     margin-top: 4.7rem;
     line-height: 1.6rem;
+    width: 320px;
   }
 }
 
@@ -214,21 +455,22 @@ html {
   @extend .button;
   @extend .is-warning;
   @extend .is-size-5;
-  @extend .is-size-2-desktop;
+  @extend .is-size-2-tablet;
   @extend .is-uppercase;
   margin-top: 3.05rem;
   height: 3.74rem;
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: 768px) {
     margin-top: 5.7rem;
     padding: 0rem 1.8rem;
     height: 2.6rem;
+    font-weight: bold;
   }
 }
 
 .hero-bg-desktop {
-  height: 596px;
+  height: 37.25rem;
   @media screen and (max-width: 369px) {
-    height: 512px;
+    height: 32rem;
     background: url(../images/bg-hero-top-xs.svg), url(../images/bg-hero.svg);
     background-repeat: no-repeat, no-repeat;
     background-size: contain, cover;
@@ -254,14 +496,14 @@ html {
 }
 
 .callback-bg-desktop {
-  height: 711px;
+  height: 44.4375rem;
   background: url(../images/bg-callback-bottom.svg),
     url(../images/bg-callback-top.svg), linear-gradient($light, $light);
   background-repeat: repeat-x, no-repeat, repeat;
   background-size: auto, cover, cover;
   background-position: bottom left, top left, top left;
   @media screen and (max-width: 400px) {
-    height: 760px;
+    height: 47.5rem;
     background: url(../images/bg-callback-bottom.svg),
       url(../images/bg-callback-top-xs.svg), linear-gradient($light, $light);
     background-repeat: repeat-x, no-repeat, repeat;
@@ -269,7 +511,7 @@ html {
     background-position: bottom left, top left, top left;
   }
   @media screen and (min-width: 401px) and (max-width: 768px) {
-    height: 711px;
+    height: 44.4375rem;
     background: url(../images/bg-callback-bottom.svg),
       url(../images/bg-callback-top.svg), linear-gradient($light, $light);
     background-repeat: repeat-x, no-repeat, repeat;
@@ -409,7 +651,7 @@ html {
   margin: 0 auto;
   margin-top: 8.4rem;
   @media screen and (max-width: 768px) {
-    margin-top: 0rem; //////////////////////////
+    margin-top: 5.8rem; //////////////////////////
     & .column {
       padding-left: 0.65rem;
       padding-right: 0.65rem;
@@ -480,10 +722,6 @@ html {
         margin-left: -1rem;
         margin-right: -1rem;
       }
-      // & .column:nth-child(4) {
-      //   background-color: $danger;
-
-      // }
     }
   }
   &__title {
@@ -637,9 +875,14 @@ html {
     }
     & div {
       & input {
+        transition: background-color $transition-quick,
+          border-color $transition-quick;
         font-size: $size-2;
         height: 2.15em;
         padding: 0.3rem 1.4rem;
+        &:hover {
+          border-color: $borderhover;
+        }
         @media screen and (max-width: 768px) {
           font-size: $size-5;
           margin-top: 0.2rem;
@@ -684,11 +927,16 @@ html {
           }
         }
         & input {
+          transition: background-color $transition-quick,
+            border-color $transition-quick;
           font-size: $size-2;
           height: 2.15em;
           width: 100%;
           margin-top: -0.3rem;
           padding: 0.3rem 1.4rem !important;
+          &:hover {
+            border-color: $borderhover;
+          }
           @media screen and (max-width: 768px) {
             width: 100%;
             margin-top: 0rem;
@@ -956,8 +1204,8 @@ html {
       @media screen and (max-width: 1023px) {
         width: 2rem;
         height: 1.2rem;
-        left: 1.2rem;
-        top: -0.25rem;
+        left: 1rem;
+        top: -0.5rem;
       }
       background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2053%2021%22%20fill%3D%22none%22%3E%3Crect%20y%3D%2219.1862%22%20width%3D%2255.691%22%20height%3D%222.19271%22%20rx%3D%221.09636%22%20transform%3D%22rotate(-20.152%200%2019.1862)%22%20fill%3D%22%23F2323F%22%2F%3E%3C%2Fsvg%3E')
         no-repeat;
@@ -1061,21 +1309,6 @@ html {
   }
 }
 
-/* remove number spinners */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
-input[type='number'] {
-  -moz-appearance: textfield; /* Firefox */
-}
-input[type='time']::-webkit-calendar-picker-indicator {
-  background: none;
-  display: none;
-}
-
 /* forms */
 
 .fieldValid {
@@ -1108,6 +1341,7 @@ input[type='time']::-webkit-calendar-picker-indicator {
   user-select: none;
   color: $grey-darker;
   width: 100%;
+  transition: background-color $transition-quick, border-color $transition-quick;
 }
 .ss-main .ss-single-selected {
   display: flex;
@@ -1117,6 +1351,10 @@ input[type='time']::-webkit-calendar-picker-indicator {
   padding: 6px;
   border: 1px solid rgb(219, 219, 219);
   border-radius: 23px;
+  transition: border-color $transition-quick !important;
+  &:hover {
+    border-color: $borderhover !important;
+  }
   @media screen and (max-width: 768px) {
     border-radius: 16px;
   }
@@ -1253,6 +1491,7 @@ input[type='time']::-webkit-calendar-picker-indicator {
   display: block;
   opacity: 1;
   transform: scaleY(1);
+  overflow: hidden;
 }
 .ss-content .ss-search {
   display: flex;
@@ -1319,7 +1558,7 @@ input[type='time']::-webkit-calendar-picker-indicator {
   padding-top: 0px;
 }
 .ss-content .ss-list {
-  max-height: 200px;
+  max-height: 12.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: left;
@@ -1354,13 +1593,13 @@ input[type='time']::-webkit-calendar-picker-indicator {
 .ss-content .ss-list .ss-option:hover,
 .ss-content .ss-list .ss-option.ss-highlighted {
   color: #fff;
-  background-color: #2562b5;
+  background-color: $link;
   transition: background-color $transition-quick, color $transition-quick;
 }
 .ss-content .ss-list .ss-option.ss-disabled {
   cursor: not-allowed;
   color: #dedede;
-  background-color: #fff;
+  background-color: transparent;
 }
 .ss-content .ss-list .ss-option:not(.ss-disabled).ss-option-selected {
   color: #666;

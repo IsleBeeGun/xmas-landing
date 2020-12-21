@@ -11,7 +11,7 @@ const closeMsg = () => {
     'style',
     'display:block; visibility:hidden; opacity: 0;'
   );
-  document.querySelector('body').style.overflow = 'visible';
+  document.querySelector('html').style.overflow = 'visible';
 };
 
 msgExit.addEventListener('click', event => {
@@ -37,7 +37,7 @@ const closeReq = () => {
     'style',
     'display:block; visibility:hidden; opacity: 0;'
   );
-  document.querySelector('body').style.overflow = 'visible';
+  document.querySelector('html').style.overflow = 'visible';
 };
 
 reqExit.addEventListener('click', event => {
