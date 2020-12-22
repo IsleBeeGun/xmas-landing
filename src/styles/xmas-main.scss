@@ -648,6 +648,7 @@ body {
 }
 
 .callback {
+  position: relative;
   margin: 0 auto;
   margin-top: 8.4rem;
   @media screen and (max-width: 768px) {
@@ -1336,6 +1337,8 @@ body {
 .bgyellow {
   background: rgba(255, 255, 0, 0.5);
 }
+
+///////////////////////////////////
 
 .ss-main {
   position: relative;

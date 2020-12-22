@@ -178,9 +178,13 @@ export const handleFormByID = id => {
         // v------------------ sending request -----------------v
         //
         //
+        document.getElementById('submitPolis').classList.add('is-loading');
         sendHttpRequest(body, 'https://api.euro-ins.ru/claim/request', 'POST')
           .then(res => {
             //
+            document
+              .getElementById('submitPolis')
+              .classList.remove('is-loading');
             //
             document
               .getElementById('reqBackdrop')
@@ -238,6 +242,9 @@ export const handleFormByID = id => {
               }
             }
             //
+            document
+              .getElementById('submitPolis')
+              .classList.remove('is-loading');
             //
             document
               .getElementById('reqBackdrop')
@@ -400,12 +407,16 @@ export const handleFormByID = id => {
         // v------------------ sending request -----------------v
         //
         //
+        document.getElementById('submitCallback').classList.add('is-loading');
         sendHttpRequest(
           body,
           'https://api.euro-ins.ru/claim/submit/callback',
           'POST'
         )
           .then(res => {
+            document
+              .getElementById('submitCallback')
+              .classList.remove('is-loading');
             document.querySelector('html').style.overflow = 'hidden';
             document.getElementById(
               'msgBody'
@@ -444,7 +455,9 @@ export const handleFormByID = id => {
                 document.getElementById('msgBody').innerHTML = errorMessageHTML;
               }
             }
-
+            document
+              .getElementById('submitCallback')
+              .classList.remove('is-loading');
             document.querySelector('html').style.overflow = 'hidden';
             document
               .getElementById('msgBackdrop')

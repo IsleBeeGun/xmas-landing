@@ -8,14 +8,14 @@
     content="ЕВРОИНС дарит подарки к Новому Году! Страхование с выгодой до 50%. Акция действует до 15.01.2021" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="theme-color" content="#FFFFFF" />
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#009ec1" />
   <meta name="msapplication-TileColor" content="#009ec1" />
-  <meta name="theme-color" content="#009ec1" />
+  <meta name="theme-color" content="#FFFFFF" />
   <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -110,7 +110,7 @@
             </label>
           </div>
           <div class="column is-full">
-            <button class="callback__submit callback__submit_req" type="submit">
+            <button class="callback__submit callback__submit_req" type="submit" id="submitPolis">
               Получить расчёт
             </button>
           </div>
@@ -348,7 +348,7 @@
   <!-- Callback Form -->
   <section class="section callback-bg-desktop">
     <div class="container">
-      <form class="columns is-multiline callback" id="callback-form" autocomplete="off">
+      <form class="columns is-multiline callback callback__is-loading" id="callback-form" autocomplete="off">
         <div class="column is-full">
           <h2 class="callback__title">Остались вопросы? <br>
             Оставьте заявку, и мы Вам перезвоним!</h2>
@@ -424,7 +424,7 @@
           </label>
         </div>
         <div class="column is-full">
-          <button class="callback__submit" type="submit">
+          <button class="callback__submit" type="submit" id="submitCallback">
             Отправить
           </button>
         </div>
