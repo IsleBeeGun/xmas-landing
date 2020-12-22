@@ -99,6 +99,8 @@ export const handleFormByID = id => {
     );
     form.addEventListener('submit', event => {
       event.preventDefault();
+      window.yaCounter70202242.reachGoal('send_form');
+      //
       if (!REGEX_NAME.test(name.value) || !REGEX_PHONE.test(phone.value)) {
         if (!REGEX_NAME.test(name.value)) {
           name.focus();
@@ -272,6 +274,7 @@ export const handleFormByID = id => {
         //
         // ^------------------ sending request -----------------^
       }
+      return true;
     });
   } else {
     // -- Getting form by id
