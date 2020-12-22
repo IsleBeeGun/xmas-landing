@@ -12,7 +12,7 @@ const inputMaskTimeOptions = {
 
 // Regular Expressions
 const REGEX_PHONE = /^\+\d{1,2}\s+?\(\d{3,5}\)\s+?\d{1,3}-\d{2}-\d{2}$/;
-const REGEX_NAME = /[^ ]/;
+const REGEX_NAME = /^[a-zA-Zа-яА-ЯёЁ ]{2,80}$/;
 const REGEX_TIME = /^(?:\d|[01]\d|2[0-3]):[0-5]\d$/;
 
 // Validation (suitable for all fields)
