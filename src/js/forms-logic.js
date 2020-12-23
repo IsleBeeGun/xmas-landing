@@ -4,7 +4,7 @@ import sendHttpRequest from './sendHttpRequest';
 
 // setting input masks
 const inputMaskPhoneOptions = {
-  mask: '+7 (000) 000-00-00',
+  mask: '+0 (000) 000-00-00',
 };
 const inputMaskTimeOptions = {
   mask: '00:00',
@@ -64,6 +64,13 @@ const validateField = (event, inputMask) => {
     REGEX_PHONE.test(target.value)
       ? setCssValid(target)
       : setCssInvalid(target);
+    // reset if wrong
+    if (target.value.substr(0, 2) !== '+7') {
+      inputMask.value = target.value.replace(/^\+\d{1,2}/, '+7');
+      REGEX_PHONE.test(target.value)
+        ? setCssValid(target)
+        : setCssInvalid(target);
+    }
   }
   if (target.name == 'from') {
     // color validation
@@ -131,6 +138,7 @@ export const handleFormByID = id => {
           }
         }
       } else {
+        const finSource = window.location.hostname;
         const finName = name.value;
         const finPhone = phone.value;
         const curMoment = new Date(Date.now());
@@ -173,6 +181,9 @@ export const handleFormByID = id => {
           comment: `Дата: ${finDate}, Московское время: ${finTime}, Полис: ${finPolis}`,
           agreement: true,
           region: '-',
+          options: {
+            source: finSource,
+          },
         };
 
         // v------------------ sending request -----------------v

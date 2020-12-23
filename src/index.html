@@ -61,7 +61,7 @@
     <span class="modal-exit" id="reqExit">&times;</span>
     <div class="modal-message" id="reqBody">
       <div class="container">
-        <form class="columns is-multiline callback callback_req" id="request-form" autocomplete="off">
+        <form class="columns is-multiline callback callback_req" id="request-form" autocomplete="on">
           <div class="column is-full">
             <h2 class="callback__title callback__title_req">Оставьте заявку на расчёт<br>
               страхового полиса</h2>
@@ -70,7 +70,7 @@
             <div class="field callback__field callback__field_req">
               <label class="label" for="callbackName">Ваше имя:<span class="has-text-danger">*</span></label>
               <div class="control has-icons-right">
-                <input class="input" type="text" id="requestName" name="name" placeholder="Иван" autocomplete="off"
+                <input class="input" type="text" id="requestName" name="name" placeholder="Иван" autocomplete="name"
                   title="Как к Вам следует обращаться?" required />
                 <span class="icon is-right is-invisible">
                   <i class="fas fa-check has-text-success"></i>
@@ -83,7 +83,7 @@
               <label class="label" for="callbackPhone">Телефон:<span class="has-text-danger">*</span></label>
               <div class="control has-icons-right">
                 <input class="input" type="tel" id="requestPhone" name="phone" placeholder="+7 (___) ___-__-__"
-                  autocomplete="off" title="Номер телефона, по которому мы Вам перезвоним" required />
+                  autocomplete="tel" title="Номер телефона, по которому мы Вам перезвоним" required />
                 <span class="icon is-right is-invisible">
                   <i class="fas fa-check has-text-success"></i>
                 </span>
@@ -348,7 +348,7 @@
   <!-- Callback Form -->
   <section class="section callback-bg-desktop">
     <div class="container">
-      <form class="columns is-multiline callback callback__is-loading" id="callback-form" autocomplete="off">
+      <form class="columns is-multiline callback callback__is-loading" id="callback-form" autocomplete="on">
         <div class="column is-full">
           <h2 class="callback__title">Остались вопросы? <br>
             Оставьте заявку, и мы Вам перезвоним!</h2>
@@ -357,8 +357,8 @@
           <div class="field callback__field">
             <label class="label" for="callbackName">Ваше имя:<span class="has-text-danger">*</span></label>
             <div class="control has-icons-right">
-              <input class="input" type="text" id="callbackName" name="name" placeholder="Иван"
-                autocomplete="new-password" title="Как к Вам следует обращаться?" required />
+              <input class="input" type="text" id="callbackName" name="name" placeholder="Иван" autocomplete="name"
+                title="Как к Вам следует обращаться?" required />
               <span class="icon is-right is-invisible">
                 <i class="fas fa-check has-text-success"></i>
               </span>
@@ -370,7 +370,7 @@
             <label class="label" for="callbackPhone">Телефон:<span class="has-text-danger">*</span></label>
             <div class="control has-icons-right">
               <input class="input" type="tel" id="callbackPhone" name="phone" placeholder="+7 (___) ___-__-__"
-                autocomplete="new-password" title="Номер телефона, по которому мы Вам перезвоним" required />
+                autocomplete="tel" title="Номер телефона, по которому мы Вам перезвоним" required />
               <span class="icon is-right is-invisible">
                 <i class="fas fa-check has-text-success"></i>
               </span>
